@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="hi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>भारतीय दर्शन मानचित्र — Bharatiya Darshana</title>
+  
+  <meta name="description" content="भारतीय दर्शन की परंपराओं, विचारकों और अवधारणाओं का संवादात्मक मानचित्र।">
+  <meta name="theme-color" content="#FAF6F0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="भारतीय दर्शन">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="stylesheet" href="./tailwind-3bf18bae4f5c.css">
+  
+  <!-- Google Fonts: Fraunces, Plus Jakarta Sans, JetBrains Mono & Noto Sans Devanagari -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Base Styles & Mobile App Shell */
+    body {
+      background-color: #E7DFD0;
+      color: #1E1B18;
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .app-shell {
+      padding-bottom: calc(6rem + env(safe-area-inset-bottom, 0px));
+    }
+
+    .app-header {
+      padding-top: calc(0.75rem + env(safe-area-inset-top, 0px));
+    }
+
+    .app-navigation {
+      padding-bottom: calc(0.375rem + env(safe-area-inset-bottom, 0px));
+    }
+
+    @media (orientation: landscape) {
+      body {
+        padding-left: env(safe-area-inset-left, 0px);
+        padding-right: env(safe-area-inset-right, 0px);
+      }
+    }
+
+    /* Hide Scrollbars for Horizontal Swipeable Carousels */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Smooth Accordion Transition */
+    .accordion-content {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.32s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .accordion-content.open {
+      grid-template-rows: 1fr;
+    }
+    .accordion-inner {
+      overflow: hidden;
+    }
+
+    /* Subtle Manuscript Grain Pattern */
+    .paper-texture {
+      background-image: radial-gradient(rgba(30, 27, 24, 0.032) 1px, transparent 0);
+      background-size: 16px 16px;
+    }
+
+    /* Tab & Card Entrance Animation */
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-up {
+      animation: fadeSlideUp 0.28s ease-out forwards;
+    }
+
+    /* Ensure >= 44px accessible touch target height on interactive controls */
+    .touch-target {
+      min-height: 44px;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-saffron selection:text-white">
+
+  <!-- Mobile-First App Container (Centered max-w-[480px] on Desktop) -->
+  <div class="max-w-[480px] mx-auto min-h-screen bg-parchment paper-texture shadow-2xl relative app-shell border-x border-borderWarm">
+
+    <!-- Top Compact App Header -->
+    <header class="app-header sticky top-0 z-30 bg-parchment/95 backdrop-blur-md border-b border-borderWarm px-4 py-3 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5 min-w-0">
+        <!-- Custom Darshana Mandala SVG Icon -->
+        <div class="w-10 h-10 rounded-full bg-saffronLight border border-saffron/30 flex items-center justify-center text-saffron shrink-0">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="3" />
+            <path d="M12 2C13.8 5.5 13.8 8.5 12 10C10.2 8.5 10.2 5.5 12 2Z" />
+            <path d="M12 22C13.8 18.5 13.8 15.5 12 14C10.2 15.5 10.2 18.5 12 22Z" />
+            <path d="M2 12C5.5 10.2 8.5 10.2 10 12C8.5 13.8 5.5 13.8 2 12Z" />
+            <path d="M22 12C18.5 10.2 15.5 10.2 14 12C15.5 13.8 18.5 13.8 22 12Z" />
+            <path d="M4.93 4.93C8.2 6.2 9.8 7.8 10.5 10.5C7.8 9.8 6.2 8.2 4.93 4.93Z" />
+            <path d="M19.07 19.07C15.8 17.8 14.2 16.2 13.5 13.5C16.2 14.2 17.8 15.8 19.07 19.07Z" />
+            <path d="M19.07 4.93C17.8 8.2 16.2 9.8 13.5 10.5C14.2 7.8 15.8 6.2 19.07 4.93Z" />
+            <path d="M4.93 19.07C6.2 15.8 7.8 14.2 10.5 13.5C9.8 16.2 8.2 17.8 4.93 19.07Z" />
+          </svg>
+        </div>
+        <div class="min-w-0">
+          <span class="text-[11px] font-mono font-semibold tracking-wide text-saffron block leading-none truncate">
+            दृश्यते अनेन इति दर्शनम्
+          </span>
+          <h1 class="font-serif font-bold text-lg text-ink leading-tight truncate">
+            भारतीय दर्शन मानचित्र
+          </h1>
+        </div>
+      </div>
+      <span id="header-status-badge" class="text-xs font-semibold bg-parchmentDark text-ink px-3 py-1.5 rounded-full border border-borderWarm shrink-0">
+        मानचित्र
+      </span>
+    </header>
+
+    <!-- Compact Top Tab Switcher Strip for Quick Visual Access -->
+    <div class="bg-parchmentDark/70 border-b border-borderWarm px-3 py-2 flex gap-1.5 overflow-x-auto no-scrollbar" role="tablist" aria-label="मुख्य विषय टैब">
+      <button onclick="switchTab('map')" id="top-tab-map" role="tab" aria-selected="true"
+        class="top-tab-btn touch-target px-3 py-1.5 rounded-xl text-xs font-bold transition-all shrink-0 bg-ink text-parchment shadow-sm">
+        मानचित्र
+      </button>
+      <button onclick="switchTab('schools')" id="top-tab-schools" role="tab" aria-selected="false"
+        class="top-tab-btn touch-target px-3 py-1.5 rounded-xl text-xs font-semibold transition-all shrink-0 bg-cardBg text-inkMuted border border-borderWarm hover:text-ink">
+        दर्शन (९)
+      </button>
+      <button onclick="switchTab('timeline-thinkers')" id="top-tab-timeline-thinkers" role="tab" aria-selected="false"
+        class="top-tab-btn touch-target px-3 py-1.5 rounded-xl text-xs font-semibold transition-all shrink-0 bg-cardBg text-inkMuted border border-borderWarm hover:text-ink">
+        कालक्रम व विचारक
+      </button>
+      <button onclick="switchTab('concepts')" id="top-tab-concepts" role="tab" aria-selected="false"
+        class="top-tab-btn touch-target px-3 py-1.5 rounded-xl text-xs font-semibold transition-all shrink-0 bg-cardBg text-inkMuted border border-borderWarm hover:text-ink">
+        अवधारणाएँ
+      </button>
+      <button onclick="switchTab('quiz')" id="top-tab-quiz" role="tab" aria-selected="false"
+        class="top-tab-btn touch-target px-3 py-1.5 rounded-xl text-xs font-semibold transition-all shrink-0 bg-cardBg text-inkMuted border border-borderWarm hover:text-ink">
+        प्रश्नोत्तरी
+      </button>
+    </div>
+
+    <!-- Main Multi-Tab Content Container -->
+    <main id="tab-content-root" class="px-4 pt-5 space-y-6">
+
+      <!-- ========================================================= -->
+      <!-- TAB 1: मानचित्र (MAP & OVERVIEW)                          -->
+      <!-- ========================================================= -->
+      <section id="view-map" class="tab-view space-y-5 animate-fade-up">
+        <!-- Hero Card -->
+        <div class="bg-cardBg rounded-2xl p-5 border border-borderWarm shadow-scholarly relative overflow-hidden">
+          <div class="absolute -right-8 -top-8 w-28 h-28 rounded-full bg-gold/15 pointer-events-none"></div>
+          <span class="text-xs font-mono font-semibold text-gold block mb-1">
+            तत्त्वमीमांसा • प्रमाणमीमांसा • मोक्ष का मार्ग
+          </span>
+          <h2 class="font-serif text-2xl font-bold text-ink leading-snug mb-2">
+            भारतीय दर्शन मानचित्र
+          </h2>
+          <p class="text-sm text-inkMuted leading-relaxed">
+            भारतीय परम्परा में <strong class="text-ink">दर्शन</strong> केवल बौद्धिक चिन्तन नहीं, अपितु सत्य, जगत्, आत्मा और <strong class="text-ink">मोक्ष</strong> का प्रत्यक्ष साक्षात्कार है। प्रत्येक दर्शन <strong class="text-ink">तत्त्वमीमांसा</strong> (सत् क्या है?), <strong class="text-ink">प्रमाणमीमांसा</strong> (सत्य कैसे जाना जाए?) और <strong class="text-ink">आचारशास्त्र</strong> का समन्वित रूप है।
+          </p>
+
+          <!-- Astika vs Nastika Taxonomy -->
+          <div class="mt-5 pt-4 border-t border-borderWarm">
+            <div class="text-center mb-1.5">
+              <span class="inline-block bg-ink text-parchment text-xs font-bold px-3.5 py-1.5 rounded-full">
+                वेद-प्रामाण्य के आधार पर वर्गीकरण
+              </span>
+            </div>
+
+            <!-- SVG Relationship Diagram Linking मूल अवधारणाएँ to आस्तिक and नास्तिक धाराएँ -->
+            <svg class="w-full h-24 text-borderWarm my-1" viewBox="0 0 360 96" fill="none" role="img" aria-label="मूल अवधारणाएँ तथा आस्तिक और नास्तिक धाराओं का सम्बन्ध आरेख">
+              <!-- Top Central Node: मूल अवधारणाएँ -->
+              <rect x="92" y="4" width="176" height="24" rx="12" fill="#F9F1DC" stroke="#C69214" stroke-width="1.4" />
+              <text x="180" y="20" text-anchor="middle" fill="#1E1B18" font-size="11" font-weight="700" font-family="Noto Sans Devanagari, sans-serif">
+                मूल अवधारणाएँ: ऋत • कर्म • संसार • मोक्ष
+              </text>
+
+              <!-- Connecting Lines from मूल अवधारणाएँ to आस्तिक & नास्तिक -->
+              <path d="M180 28 V42 M180 42 H88 V54 M180 42 H272 V54" stroke="#8C7F70" stroke-width="1.6" stroke-linecap="round" />
+
+              <!-- Left Branch: आस्तिक दर्शन -->
+              <rect x="14" y="54" width="148" height="36" rx="10" fill="#FBECE7" stroke="#D95D39" stroke-width="1.4" />
+              <text x="88" y="69" text-anchor="middle" fill="#D95D39" font-size="11.5" font-weight="700" font-family="Noto Sans Devanagari, sans-serif">
+                आस्तिक दर्शन (६)
+              </text>
+              <text x="88" y="83" text-anchor="middle" fill="#5C534A" font-size="9.5" font-family="Noto Sans Devanagari, sans-serif">
+                वेद-प्रामाण्य स्वीकार्य
+              </text>
+
+              <!-- Right Branch: नास्तिक दर्शन -->
+              <rect x="198" y="54" width="148" height="36" rx="10" fill="#E6EFEA" stroke="#3D6B5E" stroke-width="1.4" />
+              <text x="272" y="69" text-anchor="middle" fill="#3D6B5E" font-size="11.5" font-weight="700" font-family="Noto Sans Devanagari, sans-serif">
+                नास्तिक दर्शन (३)
+              </text>
+              <text x="272" y="83" text-anchor="middle" fill="#5C534A" font-size="9.5" font-family="Noto Sans Devanagari, sans-serif">
+                वेद-प्रामाण्य अस्वीकार्य
+              </text>
+            </svg>
+
+            <div class="grid grid-cols-1 gap-2.5 mt-2">
+              <button onclick="openSchoolsWithFilter('astika')" class="touch-target w-full text-left bg-saffronLight/65 hover:bg-saffronLight border border-saffron/30 rounded-xl p-3.5 transition-colors">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="font-serif font-bold text-base text-saffron">आस्तिक दर्शन (६)</span>
+                  <span class="text-xs font-bold text-saffron">देखें →</span>
+                </div>
+                <p class="text-xs text-inkMuted leading-relaxed">
+                  न्याय, वैशेषिक, सांख्य, योग, मीमांसा (पूर्व मीमांसा) तथा वेदान्त (उत्तर मीमांसा)।
+                </p>
+              </button>
+
+              <button onclick="openSchoolsWithFilter('nastika')" class="touch-target w-full text-left bg-sageLight/70 hover:bg-sageLight border border-sage/30 rounded-xl p-3.5 transition-colors">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="font-serif font-bold text-base text-sage">नास्तिक दर्शन (३)</span>
+                  <span class="text-xs font-bold text-sage">देखें →</span>
+                </div>
+                <p class="text-xs text-inkMuted leading-relaxed">
+                  चार्वाक (लोकायत), बौद्ध दर्शन तथा जैन दर्शन — अनुभव, तर्क, करुणा व संयम पर आधारित।
+                </p>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- चार पुरुषार्थ (Four Purusharthas) Card -->
+        <div class="bg-cardBg rounded-2xl p-4 border border-borderWarm shadow-scholarly space-y-3">
+          <div class="flex items-center justify-between">
+            <div>
+              <span class="text-[11px] font-mono font-semibold text-saffron">आचारशास्त्र व जीवन-लक्ष्य</span>
+              <h3 class="font-serif text-lg font-bold text-ink">चार पुरुषार्थ</h3>
+            </div>
+            <span class="text-xs bg-parchmentDark text-inkMuted px-2.5 py-1 rounded-full font-semibold">जीवन के ४ आधार</span>
+          </div>
+          <div class="grid grid-cols-2 gap-2.5 text-xs">
+            <div class="bg-parchment p-3 rounded-xl border border-borderWarm/80">
+              <p class="font-serif font-bold text-sm text-ink">१. धर्म</p>
+              <p class="text-inkMuted mt-0.5 leading-snug">कर्तव्य, नैतिकता, ऋत के अनुकूल आचरण व सामाजिक सन्तुलन।</p>
+            </div>
+            <div class="bg-parchment p-3 rounded-xl border border-borderWarm/80">
+              <p class="font-serif font-bold text-sm text-ink">२. अर्थ</p>
+              <p class="text-inkMuted mt-0.5 leading-snug">न्यायपूर्ण आजीविका, सम्पदा व भौतिक संसाधनों की सिद्धि।</p>
+            </div>
+            <div class="bg-parchment p-3 rounded-xl border border-borderWarm/80">
+              <p class="font-serif font-bold text-sm text-ink">३. काम</p>
+              <p class="text-inkMuted mt-0.5 leading-snug">सौन्दर्य, प्रेम, कला व धर्म-सम्मत इच्छाओं की पूर्ति।</p>
+            </div>
+            <div class="bg-goldLight/65 p-3 rounded-xl border border-gold/30">
+              <p class="font-serif font-bold text-sm text-ink">४. मोक्ष</p>
+              <p class="text-inkMuted mt-0.5 leading-snug">अविद्या व संसार-चक्र से परम मुक्ति तथा तत्त्व-साक्षात्कार।</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- त्रिगुण (Triguna) Card -->
+        <div class="bg-cardBg rounded-2xl p-4 border border-borderWarm shadow-scholarly space-y-3">
+          <div>
+            <span class="text-[11px] font-mono font-semibold text-sage">प्रकृति की तीन वृत्तियाँ</span>
+            <h3 class="font-serif text-lg font-bold text-ink">त्रिगुण (सत्त्व • रजस् • तमस्)</h3>
+          </div>
+          <div class="space-y-2 text-xs">
+            <div class="flex items-start gap-2.5 bg-sageLight/55 p-3 rounded-xl border border-sage/25">
+              <span class="font-serif font-bold text-sage shrink-0">सत्त्व</span>
+              <p class="text-inkMuted leading-snug">प्रकाश, निर्मलता, ज्ञान, शान्ति व सन्तुलन का गुण।</p>
+            </div>
+            <div class="flex items-start gap-2.5 bg-saffronLight/55 p-3 rounded-xl border border-saffron/25">
+              <span class="font-serif font-bold text-saffron shrink-0">रजस्</span>
+              <p class="text-inkMuted leading-snug">गति, क्रियाशीलता, इच्छा, उत्तेजना व परिवर्तन का प्रेरक गुण।</p>
+            </div>
+            <div class="flex items-start gap-2.5 bg-parchmentDark/80 p-3 rounded-xl border border-borderWarm">
+              <span class="font-serif font-bold text-ink shrink-0">तमस्</span>
+              <p class="text-inkMuted leading-snug">स्थिरता, जड़ता, अज्ञान, आलस्य व आवरण का गुण।</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- TAB 2: दर्शन (९ दर्शन व उप-संप्रदाय)                        -->
+      <!-- ========================================================= -->
+      <section id="view-schools" class="tab-view hidden space-y-4 animate-fade-up">
+        <div class="flex items-end justify-between gap-2">
+          <div>
+            <span class="text-xs font-mono font-semibold text-saffron">षड्दर्शन व श्रमण धाराएँ</span>
+            <h2 class="font-serif text-2xl font-bold text-ink">९ दर्शन व उप-संप्रदाय</h2>
+          </div>
+          <span id="schools-count-label" class="text-xs font-semibold text-inkMuted bg-parchmentDark px-2.5 py-1 rounded-full">
+            ९ दर्शन
+          </span>
+        </div>
+
+        <!-- Filter Pills -->
+        <div class="flex gap-2 overflow-x-auto no-scrollbar py-1" role="tablist" aria-label="दर्शन वर्ग फ़िल्टर">
+          <button onclick="filterSchools('all')" id="filter-all"
+            class="filter-pill touch-target px-4 py-2 rounded-full text-xs font-bold transition-all shrink-0 bg-ink text-parchment shadow-sm">
+            सभी (९)
+          </button>
+          <button onclick="filterSchools('astika')" id="filter-astika"
+            class="filter-pill touch-target px-4 py-2 rounded-full text-xs font-bold transition-all shrink-0 bg-cardBg text-ink border border-borderWarm hover:border-saffron">
+            आस्तिक (६)
+          </button>
+          <button onclick="filterSchools('nastika')" id="filter-nastika"
+            class="filter-pill touch-target px-4 py-2 rounded-full text-xs font-bold transition-all shrink-0 bg-cardBg text-ink border border-borderWarm hover:border-sage">
+            नास्तिक (३)
+          </button>
+        </div>
+
+        <!-- Schools Container -->
+        <div id="schools-container" class="space-y-3">
+          <!-- Rendered via JavaScript -->
+        </div>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- TAB 3: कालक्रम व विचारक (TIMELINE & THINKERS)             -->
+      <!-- ========================================================= -->
+      <section id="view-timeline-thinkers" class="tab-view hidden space-y-4 animate-fade-up">
+        <div>
+          <span class="text-xs font-mono font-semibold text-gold">ऐतिहासिक यात्रा व आचार्य-परम्परा</span>
+          <h2 class="font-serif text-2xl font-bold text-ink">कालक्रम व विचारक</h2>
+        </div>
+
+        <!-- Segmented Switcher: कालक्रम vs विचारक -->
+        <div class="grid grid-cols-2 gap-1.5 bg-parchmentDark p-1.5 rounded-2xl border border-borderWarm" role="tablist">
+          <button onclick="switchSubSection('timeline')" id="subtab-timeline"
+            class="touch-target py-2 px-3 rounded-xl text-xs font-bold transition-all bg-cardBg text-ink shadow-sm">
+            कालक्रम (युग-चरण)
+          </button>
+          <button onclick="switchSubSection('thinkers')" id="subtab-thinkers"
+            class="touch-target py-2 px-3 rounded-xl text-xs font-bold transition-all text-inkMuted hover:text-ink">
+            विचारक व सूक्तियाँ
+          </button>
+        </div>
+
+        <!-- Sub-view A: कालक्रम -->
+        <div id="subview-timeline" class="space-y-4">
+          <p class="text-xs text-inkMuted">किसी भी युग-चरण पर स्पर्श करके प्रमुख ग्रन्थ, वाद-विवाद और वैचारिक परिवर्तन देखें।</p>
+          <div class="relative pl-6 space-y-4 before:content-[''] before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-gradient-to-b before:from-gold before:via-saffron before:to-sage" id="timeline-container">
+            <!-- Rendered via JavaScript -->
+          </div>
+        </div>
+
+        <!-- Sub-view B: विचारक -->
+        <div id="subview-thinkers" class="hidden space-y-4">
+          <label for="thinker-search" class="block text-xs font-semibold text-inkMuted">विचारक, विचार या ग्रन्थ खोजें</label>
+          <input id="thinker-search" type="search" placeholder="जैसे आंबेडकर या Ambedkar" class="touch-target w-full rounded-2xl bg-cardBg border border-borderWarm px-4 py-2 shadow-scholarly" />
+          <!-- Era Filter Chips for Thinkers -->
+          <div class="flex gap-1.5 overflow-x-auto no-scrollbar py-1" role="tablist" aria-label="युग के अनुसार विचारक फ़िल्टर">
+            <button onclick="filterThinkers('all')" id="tfilter-all"
+              class="tfilter-pill touch-target px-3 py-1.5 rounded-full text-xs font-bold transition-all shrink-0 bg-ink text-parchment">
+              सभी विचारक
+            </button>
+            <button onclick="filterThinkers('ancient-shramana')" id="tfilter-ancient-shramana"
+              class="tfilter-pill touch-target px-3 py-1.5 rounded-full text-xs font-semibold transition-all shrink-0 bg-cardBg text-ink border border-borderWarm">
+              प्राचीन वैदिक व श्रमण
+            </button>
+            <button onclick="filterThinkers('classical-sutra')" id="tfilter-classical-sutra"
+              class="tfilter-pill touch-target px-3 py-1.5 rounded-full text-xs font-semibold transition-all shrink-0 bg-cardBg text-ink border border-borderWarm">
+              शास्त्रीय सूत्र-भाष्य
+            </button>
+            <button onclick="filterThinkers('acharya-bhakti')" id="tfilter-acharya-bhakti"
+              class="tfilter-pill touch-target px-3 py-1.5 rounded-full text-xs font-semibold transition-all shrink-0 bg-cardBg text-ink border border-borderWarm">
+              आचार्य व भक्ति युग
+            </button>
+            <button onclick="filterThinkers('modern')" id="tfilter-modern"
+              class="tfilter-pill touch-target px-3 py-1.5 rounded-full text-xs font-semibold transition-all shrink-0 bg-cardBg text-ink border border-borderWarm">
+              आधुनिक जागरण
+            </button>
+          </div>
+
+          <div id="thinkers-list-container" class="space-y-3">
+            <!-- Rendered via JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- TAB 4: अवधारणाएँ (CONCEPTS & PRAMANAS)                    -->
+      <!-- ========================================================= -->
+      <section id="view-concepts" class="tab-view hidden space-y-4 animate-fade-up">
+        <div>
+          <span class="text-xs font-mono font-semibold text-sage">पारिभाषिक शब्दावली व प्रमाणमीमांसा</span>
+          <h2 class="font-serif text-2xl font-bold text-ink">प्रमुख अवधारणाएँ व प्रमाण</h2>
+        </div>
+
+        <!-- Search Input -->
+        <div class="relative">
+          <input id="concept-search-input" type="search" oninput="renderConcepts()"
+            placeholder="अवधारणा या प्रमाण खोजें (जैसे: ब्रह्म, माया, स्याद्वाद, प्रत्यक्ष)..."
+            class="touch-target w-full rounded-2xl bg-cardBg border border-borderWarm pl-4 pr-10 py-2.5 text-xs text-ink placeholder:text-inkMuted focus:outline-none focus:border-sage shadow-scholarly" />
+          <svg class="w-4 h-4 text-inkMuted absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z" />
+          </svg>
+        </div>
+
+        <!-- Category Filter Pills -->
+        <div class="flex gap-1.5 overflow-x-auto no-scrollbar py-1" role="tablist" aria-label="अवधारणा श्रेणी">
+          <button onclick="filterConcepts('all')" id="cfilter-all"
+            class="cfilter-pill touch-target px-3.5 py-1.5 rounded-full text-xs font-bold transition-all shrink-0 bg-sage text-white">
+            सभी
+          </button>
+          <button onclick="filterConcepts('tattva')" id="cfilter-tattva"
+            class="cfilter-pill touch-target px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all shrink-0 bg-cardBg text-ink border border-borderWarm">
+            तत्त्व व आत्मा
+          </button>
+          <button onclick="filterConcepts('sadhana')" id="cfilter-sadhana"
+            class="cfilter-pill touch-target px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all shrink-0 bg-cardBg text-ink border border-borderWarm">
+            साधना व मार्ग
+          </button>
+          <button onclick="filterConcepts('pramana')" id="cfilter-pramana"
+            class="cfilter-pill touch-target px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all shrink-0 bg-cardBg text-ink border border-borderWarm">
+            प्रमाण व तर्क
+          </button>
+        </div>
+
+        <!-- Concepts Expandable Cards Container -->
+        <div id="concepts-list-container" class="space-y-2.5">
+          <!-- Rendered via JavaScript -->
+        </div>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- TAB 5: प्रश्नोत्तरी (SELF-CHECK QUIZ)                      -->
+      <!-- ========================================================= -->
+      <section id="view-quiz" class="tab-view hidden space-y-4 animate-fade-up">
+        <div class="bg-cardBg rounded-2xl p-5 border border-borderWarm shadow-scholarly">
+          <div class="flex items-center justify-between gap-2 mb-4 pb-3 border-b border-borderWarm">
+            <div>
+              <span class="text-[11px] font-mono font-semibold text-saffron">आत्म-परीक्षण (८ प्रश्न)</span>
+              <h2 class="font-serif text-xl font-bold text-ink">दर्शन प्रश्नोत्तरी</h2>
+            </div>
+            <span id="quiz-counter" class="text-xs font-bold bg-parchmentDark text-ink px-3 py-1.5 rounded-full">
+              १ / ८
+            </span>
+          </div>
+
+          <div id="quiz-body" class="space-y-3">
+            <!-- Rendered via JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Scholarly Footer -->
+      <footer class="text-center pt-2 pb-4 text-xs text-inkMuted border-t border-borderWarm/70">
+        <p class="font-serif italic text-sm text-ink mb-1">“एकं सद् विप्रा बहुधा वदन्ति”</p>
+        <p>सत्य एक है; ज्ञानीजन उसे अनेक प्रकार से कहते हैं। — ऋग्वेद १.१६४.४६</p>
+        <p class="mt-2"><a class="underline" href="https://sathee.iitk.ac.in/hi/sathee-ssc/student-corner/ncert-books/class-11/knowledge-traditions-and-practices-of-india/chapter-02-indian-philosophical-systems/">भारतीय दार्शनिक पद्धतियाँ</a> · <a class="underline" href="https://plato.stanford.edu/entries/epistemology-india/">प्रमाणमीमांसा</a> · <a class="underline" href="https://heritage.iitk.ac.in/SBG/2.47">गीता २.४७</a></p>
+      </footer>
+
+    </main>
+
+    <!-- Sticky Bottom Tab Bar (5 Primary Tabs) -->
+    <nav aria-label="मुख्य नेविगेशन टैब" class="app-navigation fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] bg-cardBg/95 backdrop-blur-md border-t border-borderWarm px-1.5 py-1.5 z-40 shadow-[0_-4px_20px_rgba(0,0,0,0.06)]">
+      <ul class="grid grid-cols-5 gap-0.5 text-center">
+        <li>
+          <button onclick="switchTab('map')" id="nav-map"
+            class="bottom-nav-btn touch-target w-full flex flex-col items-center justify-center py-1 rounded-xl text-saffron bg-saffronLight/60 transition-colors">
+            <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+            </svg>
+            <span class="text-[10px] font-bold leading-tight">मानचित्र</span>
+          </button>
+        </li>
+        <li>
+          <button onclick="switchTab('schools')" id="nav-schools"
+            class="bottom-nav-btn touch-target w-full flex flex-col items-center justify-center py-1 rounded-xl text-inkMuted hover:text-saffron transition-colors">
+            <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+            <span class="text-[10px] font-bold leading-tight">दर्शन</span>
+          </button>
+        </li>
+        <li>
+          <button onclick="switchTab('timeline-thinkers')" id="nav-timeline-thinkers"
+            class="bottom-nav-btn touch-target w-full flex flex-col items-center justify-center py-1 rounded-xl text-inkMuted hover:text-saffron transition-colors">
+            <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-[10px] font-bold leading-tight">कालक्रम</span>
+          </button>
+        </li>
+        <li>
+          <button onclick="switchTab('concepts')" id="nav-concepts"
+            class="bottom-nav-btn touch-target w-full flex flex-col items-center justify-center py-1 rounded-xl text-inkMuted hover:text-saffron transition-colors">
+            <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+            </svg>
+            <span class="text-[10px] font-bold leading-tight">अवधारणाएँ</span>
+          </button>
+        </li>
+        <li>
+          <button onclick="switchTab('quiz')" id="nav-quiz"
+            class="bottom-nav-btn touch-target w-full flex flex-col items-center justify-center py-1 rounded-xl text-inkMuted hover:text-saffron transition-colors">
+            <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-[10px] font-bold leading-tight">प्रश्नोत्तरी</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+
+  <!-- Application Data & Interactive Logic -->
+  <script>
+    // ==========================================
+    // १. ९ दर्शन व उप-संप्रदाय
+    // ==========================================
+    const SCHOOLS_DATA = [
+      {
+        id: 'nyaya',
+        name: 'न्याय दर्शन',
+        category: 'astika',
+        founder: 'महर्षि अक्षपाद गौतम',
+        text: 'न्यायसूत्र (लगभग दूसरी शती ई.पू.)',
+        subSchools: 'प्राचीन न्याय, नव्य न्याय (गङ्गेश उपाध्याय)',
+        tagline: 'तर्कशास्त्र, पञ्चावयव न्याय व प्रमाणमीमांसा',
+        metaphysics: 'सत्कार्य-विरोधी असत्कार्यवाद/आरम्भवाद; पृथक् जड़ जगत्, जीवात्मा और कर्मफल-व्यवस्थाता ईश्वर की सत्ता।',
+        epistemology: '४ प्रमाण — प्रत्यक्ष, अनुमान, उपमान और शब्द।',
+        quoteOriginal: '“प्रमाणैरर्थपरीक्षणं न्यायः”',
+        quoteMeaning: 'प्रमाणों द्वारा विषय की सम्यक् परीक्षा ही न्याय है। — वात्स्यायन भाष्य',
+        summary: 'भारतीय तर्कशास्त्र और वाद-विद्या की आधारशिला। अज्ञान और मिथ्याज्ञान की निवृत्ति से अपवर्ग (मोक्ष) की प्राप्ति।'
+      },
+      {
+        id: 'vaisheshika',
+        name: 'वैशेषिक दर्शन',
+        category: 'astika',
+        founder: 'महर्षि कणाद (उलूक)',
+        text: 'वैशेषिकसूत्र',
+        subSchools: 'परमाणुवाद व सप्तपदार्थ परम्परा (प्रशस्तपाद भाष्य; पश्चात् न्याय-वैशेषिक समन्वय)',
+        tagline: 'परमाणुवाद व सप्तपदार्थ-विश्लेषण',
+        metaphysics: 'पृथ्वी, जल, तेज व वायु के नित्य परमाणुओं से जगत् का निर्माण; विशेष पदार्थ द्वारा प्रत्येक परमाणु की मौलिक विशिष्टता।',
+        epistemology: '२ मुख्य प्रमाण — प्रत्यक्ष और अनुमान।',
+        quoteOriginal: '“यतोऽभ्युदयनिःश्रेयससिद्धिः स धर्मः”',
+        quoteMeaning: 'जिससे अभ्युदय (लौकिक उन्नति) और निःश्रेयस (परम कल्याण/मोक्ष) दोनों सिद्ध हों, वही धर्म है। — वैशेषिकसूत्र १.१.२',
+        summary: 'भौतिक जगत् और पदार्थों के वर्गीकरण (द्रव्य, गुण, कर्म, सामान्य, विशेष, समवाय, अभाव) का वैज्ञानिक व तार्किक विश्लेषण।'
+      },
+      {
+        id: 'samkhya',
+        name: 'सांख्य दर्शन',
+        category: 'astika',
+        founder: 'महर्षि कपिल',
+        text: 'सांख्यसूत्र, सांख्यकारिका (ईश्वरकृष्ण)',
+        subSchools: 'सत्कार्यवाद व २५ तत्त्व-मीमांसा (निरीश्वर सांख्य परम्परा)',
+        tagline: 'पुरुष व प्रकृति का द्वैत तथा २५ तत्त्व',
+        metaphysics: 'चेतन-साक्षी पुरुष और जड़-क्रियाशील प्रकृति का द्वैत; प्रकृति से महान्, अहंकार, पञ्चतन्मात्रा आदि २५ तत्त्वों का विकास।',
+        epistemology: '३ प्रमाण — प्रत्यक्ष, अनुमान और आप्तवचन (शब्द)।',
+        quoteOriginal: '“पुरुषस्यार्थं दर्शनार्थं कैवल्यार्थं तथा प्रधानस्य”',
+        quoteMeaning: 'पुरुष द्वारा प्रकृति के दर्शन और कैवल्य (मुक्ति) के लिए प्रकृति की प्रवृत्ति होती है। — सांख्यकारिका २१',
+        summary: 'विवेकख्याति (पुरुष और प्रकृति के भेद-ज्ञान) से दुःखत्रय की आत्यन्तिक निवृत्ति और कैवल्य की प्राप्ति।'
+      },
+      {
+        id: 'yoga',
+        name: 'योग दर्शन',
+        category: 'astika',
+        founder: 'महर्षि पतञ्जलि',
+        text: 'योगसूत्र (विभूतिपाद, साधनपाद, समाधिपाद, कैवल्यपाद)',
+        subSchools: 'राजयोग / अष्टाङ्ग योग परम्परा (व्यास भाष्य)',
+        tagline: 'चित्तवृत्ति-निरोध, अष्टाङ्ग साधन व ईश्वर-प्रणिधान',
+        metaphysics: 'सांख्य के २५ तत्त्वों को स्वीकार करते हुए ध्यान व समाधि के आलम्बन रूप में क्लेश-कर्म-विपाक-अस्पृष्ट ‘ईश्वर’ की मान्यता।',
+        epistemology: '३ प्रमाण — प्रत्यक्ष, अनुमान और आगम (शब्द)।',
+        quoteOriginal: '“योगश्चित्तवृत्तिनिरोधः”',
+        quoteMeaning: 'चित्त की वृत्तियों का निरोध ही योग है। — योगसूत्र १.२',
+        summary: 'मन के अनुशासन, वैराग्य, अभ्यास और अष्टाङ्ग मार्ग द्वारा चित्त को निर्मल कर द्रष्टा के स्वरूप में स्थिति।'
+      },
+      {
+        id: 'mimamsa',
+        name: 'मीमांसा (पूर्व मीमांसा)',
+        category: 'astika',
+        founder: 'महर्षि जैमिनि',
+        text: 'मीमांसासूत्र (शाबर भाष्य)',
+        subSchools: 'भाट्ट मत (कुमारिल भट्ट), प्राभाकर मत (प्रभाकर मिश्र)',
+        tagline: 'वेद-वाक्य-मीमांसा, धर्म-जिज्ञासा व स्वतःप्रामाण्यवाद',
+        metaphysics: 'वेद अपौरुषेय व नित्य हैं; यज्ञीय कर्म, विधि-वाक्य और धर्म-नियम जगत् की व्यवस्था को संचालित करते हैं।',
+        epistemology: '५ से ६ प्रमाण — प्रत्यक्ष, अनुमान, उपमान, अर्थापत्ति, अनुपलब्धि व शब्द।',
+        quoteOriginal: '“अथातो धर्मजिज्ञासा”',
+        quoteMeaning: 'अब यहाँ से धर्म (कर्तव्य व विहित कर्म) की जिज्ञासा प्रारम्भ होती है। — मीमांसासूत्र १.१.१',
+        summary: 'वाक्य-शास्त्र, भाषा-व्याख्या और कर्म-धर्म के सूक्ष्म विवेचन का प्राचीन शास्त्र।'
+      },
+      {
+        id: 'vedanta',
+        name: 'वेदान्त (उत्तर मीमांसा)',
+        category: 'astika',
+        founder: 'महर्षि बादरायण (व्यास)',
+        text: 'ब्रह्मसूत्र, उपनिषद् व श्रीमद्भगवद्गीता (प्रस्थानत्रयी)',
+        subSchools: 'अद्वैत (शङ्कराचार्य), विशिष्टाद्वैत (रामानुजाचार्य), द्वैत (मध्वाचार्य), द्वैताद्वैत, शुद्धाद्वैत, अचिन्त्य भेदाभेद',
+        tagline: 'ब्रह्म, आत्मा, माया व भक्ति-ज्ञान-कर्म समन्वय',
+        metaphysics: 'ब्रह्म ही परम सत्य है; उप-संप्रदायों के अनुसार अद्वैत में ब्रह्म-आत्मा अभेद, विशिष्टाद्वैत में चिद्-अचिद् विशिष्ट ब्रह्म और द्वैत में जीव-ब्रह्म भेद।',
+        epistemology: 'श्रुति (उपनिषद्) को मुख्य प्रमाण मानकर प्रत्यक्ष, अनुमान आदि का समन्वय।',
+        quoteOriginal: '“ब्रह्म सत्यं जगन्मिथ्या जीवो ब्रह्मैव नापरः”',
+        quoteMeaning: 'ब्रह्म सत्य है, जगत् मिथ्या (भासमान) है और जीव ब्रह्म ही है, उससे भिन्न नहीं। — अद्वैत परम्परा',
+        summary: 'उपनिषदों के महावाक्यों (‘तत्त्वमसि’, ‘अहं ब्रह्मास्मि’, ‘अयमात्मा ब्रह्म’) के गहन तत्त्व-चिन्तन और मुक्ति का शिखर।'
+      },
+      {
+        id: 'charvaka',
+        name: 'चार्वाक / लोकायत',
+        category: 'nastika',
+        founder: 'बृहस्पति',
+        text: 'बार्हस्पत्य सूत्र (अप्राप्य; परवर्ती ग्रन्थों में उद्धृत)',
+        subSchools: 'सुशिक्षित चार्वाक, धूर्त चार्वाक',
+        tagline: 'प्रत्यक्ष-प्रामाण्यवाद, भूत-चैतन्यवाद व यथार्थवादी दृष्टि',
+        metaphysics: 'पृथ्वी, जल, तेज व वायु ही चार मूल भूत हैं; इन्हीं के संयोग से चेतना उत्पन्न होती है। पृथक् आत्मा, पुनर्जन्म या अदृश्य लोक अमान्य।',
+        epistemology: 'केवल १ प्रमाण — प्रत्यक्ष (इन्द्रिय-अनुभव)।',
+        quoteOriginal: '“प्रत्यक्षमेकं प्रमाणम्”',
+        quoteMeaning: 'प्रत्यक्ष ही एकमात्र प्रमाण है। — सर्वदर्शनसंग्रह',
+        summary: 'अन्धविश्वास, बाह्याडम्बर और अनुचित कर्मकाण्ड की तीक्ष्ण आलोचना; प्रत्यक्ष अनुभव और व्यावहारिक जीवन पर बल।'
+      },
+      {
+        id: 'buddha',
+        name: 'बौद्ध दर्शन',
+        category: 'nastika',
+        founder: 'गौतम बुद्ध (सिद्धार्थ)',
+        text: 'त्रिपिटक (विनय, सुत्त, अभिधम्म), धम्मपद, नागार्जुन के ग्रन्थ',
+        subSchools: 'हीनयान / थेरवाद, महायान — माध्यमिक (शून्यवाद) व योगाचार (विज्ञानवाद)',
+        tagline: 'प्रतीत्यसमुत्पाद, अनित्य, अनात्म, चतुःसत्य व निर्वाण',
+        metaphysics: 'कोई नित्य आत्मा या स्थिर द्रव्य नहीं; सभी धर्म क्षणिक और हेतु-प्रत्यय से उत्पन्न (प्रतीत्यसमुत्पाद) हैं; महायान में शून्यता/विज्ञान।',
+        epistemology: 'दिङ्नाग व धर्मकीर्ति की परम्परा में प्रत्यक्ष व अनुमान।',
+        quoteOriginal: '“सब्बे सङ्खारा अनिच्चा... सब्बे धम्मा अनत्ता”',
+        quoteMeaning: 'सभी संस्कार अनित्य हैं; सभी धर्म अनात्म हैं। — धम्मपद २७७–२७९',
+        summary: 'दुःख के कारण (तृष्णा/अविद्या) को समझकर शील, समाधि और प्रज्ञा के माध्यम से निर्वाण की साधना।'
+      },
+      {
+        id: 'jain',
+        name: 'जैन दर्शन',
+        category: 'nastika',
+        founder: 'तीर्थङ्कर परम्परा; २४वें तीर्थङ्कर वर्धमान महावीर',
+        text: 'आगम साहित्य, तत्त्वार्थसूत्र (उमास्वाति)',
+        subSchools: 'श्वेताम्बर, दिगम्बर',
+        tagline: 'अनेकान्तवाद, स्याद्वाद, अहिंसा व सम्यक् दर्शन-ज्ञान-चरित्र',
+        metaphysics: 'जीव (चेतन आत्मा) और अजीव (पुद्गल, धर्म, अधर्म, आकाश, काल) का द्वैत; कर्म-पुद्गल के बन्धन से जीव संसार में भ्रमण करता है।',
+        epistemology: 'अनेकान्तवाद, सप्तभङ्गी नय / स्याद्वाद, मति, श्रुत, अवधि, मनःपर्यय व केवल ज्ञान।',
+        quoteOriginal: '“अहिंसा परमो धर्मः”',
+        quoteMeaning: 'अहिंसा ही परम धर्म है। — जैन आगम',
+        summary: 'सत्य के बहुआयामी स्वरूप को स्वीकार करते हुए कठोर अहिंसा, अपरिग्रह और तप से कैवल्य/मोक्ष का मार्ग।'
+      }
+    ];
+
+    // ==========================================
+    // २. कालक्रम (युग-चरण)
+    // ==========================================
+    const TIMELINE_DATA = [
+      {
+        era: 'लगभग १५०० – ८०० ई.पू.',
+        title: 'वैदिक व प्रारम्भिक उपनिषद् युग',
+        badge: 'आधारशिला',
+        color: 'gold',
+        summary: 'ऋग्वेद के ऋत व देव-सूक्तों से उपनिषदों के आत्म-ब्रह्म चिन्तन तक की यात्रा।',
+        details: 'बाह्य यज्ञ-कर्म के साथ ‘कोऽहम्’ (मैं कौन हूँ?) और ‘कस्मै देवाय हविषा विधेम’ जैसे प्रश्न उभरे। ईश, केन, कठ, छान्दोग्य व बृहदारण्यक उपनिषदों में आत्मा और ब्रह्म का गहन अन्वेषण हुआ।'
+      },
+      {
+        era: 'लगभग ६०० – २०० ई.पू.',
+        title: 'श्रमण क्रान्ति व सूत्र-ग्रन्थों का उदय',
+        badge: 'वैचारिक मंथन',
+        color: 'sage',
+        summary: 'बौद्ध, जैन और चार्वाक धाराओं का विकास तथा षड्दर्शन के सूत्र-ग्रन्थों की रचना।',
+        details: 'बुद्ध व महावीर ने करुणा, शील, अहिंसा और आत्म-संयम का मार्ग दिया। समानान्तर रूप से कणाद, जैमिनि, कपिल आदि की परम्पराओं ने सूत्र-शैली में तत्त्व, धर्म व प्रकृति का विवेचन किया।'
+      },
+      {
+        era: 'लगभग २०० ई.पू. – ५०० ई.',
+        title: 'शास्त्रीय सूत्र-भाष्य व तर्क-मीमांसा युग',
+        badge: 'तर्क व योग',
+        color: 'saffron',
+        summary: 'पतञ्जलि के योगसूत्र, न्यायसूत्र, नागार्जुन के माध्यमिक कारिका और प्रमाण-शास्त्र का विस्तार।',
+        details: 'अष्टाङ्ग योग व्यवस्थित हुआ; न्याय व वैशेषिक में तर्क और पदार्थ-विश्लेषण निखरा; नागार्जुन ने प्रतीत्यसमुत्पाद व शून्यता को दार्शनिक ऊँचाई दी।'
+      },
+      {
+        era: 'लगभग ७०० – १३०० ई.',
+        title: 'आचार्य व भक्ति-वेदान्त युग',
+        badge: 'भाष्य व भक्ति',
+        color: 'gold',
+        summary: 'शङ्कराचार्य, रामानुजाचार्य व मध्वाचार्य के भाष्य तथा भक्ति-परम्परा का उत्कर्ष।',
+        details: 'प्रस्थानत्रयी पर अद्वैत, विशिष्टाद्वैत व द्वैत की सुदृढ़ स्थापना हुई। साथ ही शैव, शाक्त और वैष्णव भक्ति-धाराओं ने ज्ञान के साथ प्रेम व समर्पण को जन-जन तक पहुँचाया।'
+      },
+      {
+        era: 'लगभग १३०० – १७०० ई.',
+        title: 'नव्य न्याय, भक्ति और अन्तर-परम्परा संवाद',
+        badge: 'तर्क और संवाद',
+        color: 'saffron',
+        summary: 'गङ्गेश के बाद नव्य न्याय का विकास, कबीर और मीराबाई की वाणी, तथा गुरु नानक की शिक्षाएँ।',
+        details: 'तत्त्वचिन्तामणि ने ज्ञान और अनुमान के विश्लेषण को नई भाषा दी। गुरु नानक ने नाम-स्मरण और सेवा पर बल दिया। दारा शिकोह ने मज्मा-उल-बहरीन में सूफ़ी और भारतीय चिन्तन की तुलना की।'
+      },
+      {
+        era: 'लगभग १८०० – १९५० ई.',
+        title: 'आधुनिक भारतीय चिन्तन व जागरण',
+        badge: 'नव-चिन्तन',
+        color: 'sage',
+        summary: 'शास्त्रीय दर्शन का आधुनिक विज्ञान, समाज-सुधार व विश्व-संवाद से समन्वय।',
+        details: 'स्वामी विवेकानन्द, श्री अरविन्द, डॉ. सर्वपल्ली राधाकृष्णन व डॉ. भीमराव आम्बेडकर ने भारतीय दर्शन की समता, करुणा, कर्म व तत्त्व-दृष्टि को आधुनिक सन्दर्भ में प्रस्तुत किया।'
+      }
+    ];
+
+    // ==========================================
+    // ३. विचारक व सूक्तियाँ
+    // ==========================================
+    const THINKERS_DATA = [
+      {
+        name: 'महर्षि याज्ञवल्क्य',
+        period: 'लगभग ८वीं–७वीं शती ई.पू.',
+        eraGroup: 'ancient-shramana',
+        tradition: 'उपनिषद् / अद्वैत पूर्वगाथा',
+        quote: '“नेति, नेति” (यह भी नहीं, वह भी नहीं)',
+        meaning: 'आत्मा को किसी एक सीमित वस्तु या गुण से परिभाषित नहीं किया जा सकता; वह सभी ज्ञेय वस्तुओं का साक्षी है।',
+        contribution: 'बृहदारण्यक उपनिषद् में मैत्रेयी व जनक-संवाद के माध्यम से आत्म-तत्त्व और प्रेम के आध्यात्मिक अर्थ को स्पष्ट किया।'
+      },
+      {
+        name: 'गौतम बुद्ध',
+        period: 'लगभग ५वीं शती ई.पू.',
+        eraGroup: 'ancient-shramana',
+        tradition: 'बौद्ध दर्शन',
+        quote: '“अप्प दीपो भव” (अत्त दीपो भव — अपना दीपक स्वयं बनो)',
+        meaning: 'सत्य व निर्वाण के मार्ग में बाह्य पराधीनता के स्थान पर स्व-बोध, शील, समाधि और प्रज्ञा का आश्रय लेना चाहिए।',
+        contribution: 'चतुःसत्य, अष्टाङ्गिक मार्ग, प्रतीत्यसमुत्पाद, अनित्य व अनात्म की शिक्षा देकर करुणापूर्ण जीवन-दृष्टि दी।'
+      },
+      {
+        name: 'वर्धमान महावीर',
+        period: 'छठी शती ई.पू.',
+        eraGroup: 'ancient-shramana',
+        tradition: 'जैन दर्शन',
+        quote: '“अहिंसा परमो धर्मः” / “जीओ और जीने दो”',
+        meaning: 'किसी भी जीव को मन, वचन या कर्म से पीड़ा न पहुँचाना सर्वोच्च नैतिक नियम है।',
+        contribution: 'अहिंसा, सत्य, अस्तेय, अपरिग्रह व ब्रह्मचर्य (पञ्चमहाव्रत) तथा अनेकान्तवाद के माध्यम से सहिष्णुता व आत्म-संयम का मार्ग दिखाया।'
+      },
+      {
+        name: 'महर्षि कणाद',
+        period: 'लगभग ६ठी–२री शती ई.पू.',
+        eraGroup: 'classical-sutra',
+        tradition: 'वैशेषिक दर्शन',
+        quote: '“द्रव्यमाश्रयवत् गुणकर्मनिरपेक्षम्” (आधारभूत द्रव्य का लक्षण)',
+        meaning: 'द्रव्य वह है जिसमें गुण और कर्म आश्रित रहते हैं; सूक्ष्म परमाणु भौतिक जगत् के मूल घटक हैं।',
+        contribution: 'वैशेषिकसूत्र के माध्यम से परमाणुवाद और सप्तपदार्थ की व्यवस्थित मीमांसा प्रस्तुत की।'
+      },
+      {
+        name: 'महर्षि कपिल',
+        period: 'लगभग ६ठी शती ई.पू. / शास्त्रीय सांख्य',
+        eraGroup: 'classical-sutra',
+        tradition: 'सांख्य दर्शन',
+        quote: 'सार · सांख्य में पुरुष चेतन साक्षी है और प्रकृति परिवर्तनशील है।',
+        meaning: 'सभी क्रियाएँ प्रकृति के गुणों द्वारा सम्पन्न होती हैं, जबकि चेतन पुरुष उदासीन साक्षी है।',
+        contribution: 'प्रकृति और पुरुष के द्वैत तथा २५ तत्त्वों के क्रमबद्ध विश्लेषण से भारतीय दर्शन को गहरी संरचना दी।'
+      },
+      {
+        name: 'महर्षि पतञ्जलि',
+        period: 'लगभग दूसरी शती ई.पू.',
+        eraGroup: 'classical-sutra',
+        tradition: 'योग दर्शन',
+        quote: '“योगश्चित्तवृत्तिनिरोधः”',
+        meaning: 'चित्त की विविध वृत्तियों को शान्त कर स्थिर करना ही योग है।',
+        contribution: 'योगसूत्र में अष्टाङ्ग योग, क्लेश-विश्लेषण और चित्त-प्रसादन की सुव्यवस्थित साधना-पद्धति दी।'
+      },
+      {
+        name: 'आचार्य नागार्जुन',
+        period: 'लगभग दूसरी–तीसरी शती ई.',
+        eraGroup: 'classical-sutra',
+        tradition: 'बौद्ध माध्यमिक (शून्यवाद)',
+        quote: '“यः प्रतीत्यसमुत्पादः सा शून्यता प्रकीर्तिता”',
+        meaning: 'जो प्रतीत्यसमुत्पाद (परस्पर निर्भर उत्पत्ति) है, वही निःस्वभावता/शून्यता है।',
+        contribution: 'मूलमध्यमककारिका में ‘मध्यम प्रतिपदा’ द्वारा शाश्वतवाद और उच्छेदवाद दोनों अतियों का खण्डन किया।'
+      },
+      {
+        name: 'आदि शङ्कराचार्य',
+        period: 'लगभग आठवीं शती ई.',
+        eraGroup: 'acharya-bhakti',
+        tradition: 'अद्वैत वेदान्त',
+        quote: '“एकमेवाद्वितीयम्” / “ब्रह्म सत्यं जगन्मिथ्या”',
+        meaning: 'परम सत्य एक अद्वितीय ब्रह्म है; अज्ञान के कारण जगत् की पृथक् प्रतीति होती है।',
+        contribution: 'उपनिषद्, भगवद्गीता व ब्रह्मसूत्र पर भाष्य लिखकर अद्वैत वेदान्त को सुदृढ़ शास्त्रीय आधार दिया और चार मठों की स्थापना की।'
+      },
+      {
+        name: 'रामानुजाचार्य',
+        period: '१०१७ – ११३७ ई.',
+        eraGroup: 'acharya-bhakti',
+        tradition: 'विशिष्टाद्वैत वेदान्त',
+        quote: '“शरीरभूतः जीवः ब्रह्म आत्मा”',
+        meaning: 'चिद् और अचिद् तत्त्व ब्रह्म के शरीर/विशेषण रूप में अभिन्न होकर भी विशिष्ट अस्तित्व रखते हैं।',
+        contribution: 'श्रीभाष्य के माध्यम से भक्ति व शरणागति (प्रपत्ति) को मोक्ष का सुगम व सर्वसुलभ साधन प्रतिपादित किया।'
+      },
+      {
+        name: 'मध्वाचार्य',
+        period: '१२३८ – १३१७ ई.',
+        eraGroup: 'acharya-bhakti',
+        tradition: 'द्वैत वेदान्त',
+        quote: '“स्वतन्त्रः भगवान् विष्णुः परतन्त्रं जगत्”',
+        meaning: 'ईश्वर (विष्णु) पूर्णतः स्वतन्त्र हैं और जीव व जगत् उन पर आश्रित होते हुए भी तात्त्विक रूप से भिन्न हैं।',
+        contribution: 'पञ्चभेद (ईश्वर-जीव, ईश्वर-जड़, जीव-जीव, जीव-जड़, जड़-जड़) के स्पष्ट सिद्धान्त से द्वैत वेदान्त को प्रतिष्ठित किया।'
+      },
+      {
+        name: 'स्वामी विवेकानन्द',
+        period: '१८६३ – १९०२ ई.',
+        eraGroup: 'modern',
+        tradition: 'नव-वेदान्त / व्यवहार वेदान्त',
+        quote: '“उत्तिष्ठत जाग्रत प्राप्य वरान्निबोधत” / “जीव सेवा ही शिव सेवा है”',
+        meaning: 'उठो, जागो और श्रेष्ठ ज्ञान को प्राप्त करो; मानव-सेवा को ही सच्ची ईश्वर-आराधना मानो।',
+        contribution: 'वेदान्त, योग और भारतीय संस्कृति को विश्व-मञ्च पर रखा तथा आत्म-विश्वास, शिक्षा व सेवा का आह्वान किया।'
+      },
+      {
+        name: 'डॉ. सर्वपल्ली राधाकृष्णन',
+        period: '१८८८ – १९७५ ई.',
+        eraGroup: 'modern',
+        tradition: 'आधुनिक भारतीय दर्शन',
+        quote: 'सार · दर्शन में तर्क और आध्यात्मिक अनुभव दोनों का स्थान है।',
+        meaning: 'सच्चा दर्शन जीवन के अनुभव, नैतिकता और आध्यात्मिक बोध को जोड़ता है।',
+        contribution: '‘इण्डियन फ़िलॉसफ़ी’ व उपनिषद्-गीता भाष्यों के माध्यम से भारतीय दर्शन की समन्वयकारी छवि विश्व के समक्ष रखी।'
+      }
+    ];
+
+    // ==========================================
+    // ४. अवधारणाएँ व प्रमाण
+    // ==========================================
+    const CONCEPTS_DATA = [
+      {
+        term: 'ब्रह्म',
+        category: 'tattva',
+        short: 'परम असीम सत्ता व चेतना का मूल आधार',
+        detail: 'उपनिषदों व वेदान्त के अनुसार ब्रह्म अनन्त, नित्य और सत्-चित्-आनन्द स्वरूप है। निर्गुण ब्रह्म निराकार व असीम है, जबकि सगुण ब्रह्म (ईश्वर) सृष्टि-पालन-संहार की शक्ति से युक्त है।'
+      },
+      {
+        term: 'आत्मा',
+        category: 'tattva',
+        short: 'अन्तर्निहित चेतन स्वरूप या साक्षी',
+        detail: 'शरीर, इन्द्रिय और मन से भिन्न चेतन तत्त्व। आस्तिक दर्शनों में आत्मा को नित्य व अमर माना गया है, जबकि बौद्ध दर्शन में स्थिर ‘आत्मा’ के स्थान पर क्षणिक स्कन्धों/सन्तति की व्याख्या है।'
+      },
+      {
+        term: 'माया',
+        category: 'tattva',
+        short: 'अद्वैत में भासमान जगत् की प्रतीति का हेतु',
+        detail: 'माया न तो पूर्णतः सत् (ब्रह्मवत्) है और न पूर्णतः असत् (वन्ध्यापुत्रवत्)—यह अनिर्वचनीय है। ज्ञान होने पर आवरण हटता है और अद्वैत का बोध होता है।'
+      },
+      {
+        term: 'कर्म व संसार',
+        category: 'tattva',
+        short: 'कर्म-फल का नियम और जन्म-मरण का चक्र',
+        detail: '‘कर्म’ का अर्थ केवल भौतिक क्रिया नहीं, बल्कि संकल्प, विचार, वाणी और कृति है। कर्म-संस्कारों के अनुसार जीव का ‘संसार’ (जन्म-पुनर्जन्म का प्रवाह) चलता है।'
+      },
+      {
+        term: 'मोक्ष / निर्वाण',
+        category: 'sadhana',
+        short: 'दुःख व बन्धन से परम मुक्ति',
+        detail: 'अविद्या, राग-द्वेष और कर्म-बन्धन से पूर्ण मुक्ति। वेदान्त में मोक्ष, योग में कैवल्य, और बौद्ध परम्परा में तृष्णा-क्षय के रूप में निर्वाण कहा गया है।'
+      },
+      {
+        term: 'प्रस्थानत्रयी',
+        category: 'sadhana',
+        short: 'वेदान्त के तीन प्रस्थान — उपनिषद्, भगवद्गीता, ब्रह्मसूत्र',
+        detail: 'उपनिषद् ‘श्रुति प्रस्थान’, श्रीमद्भगवद्गीता ‘स्मृति प्रस्थान’ और ब्रह्मसूत्र ‘न्याय प्रस्थान’ कहलाते हैं। प्रायः सभी वेदान्त आचार्यों ने इन तीनों पर भाष्य लिखे।'
+      },
+      {
+        term: 'अष्टाङ्ग योग',
+        category: 'sadhana',
+        short: 'योग के ८ सोपान — यम, नियम, आसन, प्राणायाम, प्रत्याहार, धारणा, ध्यान, समाधि',
+        detail: '१. यम (अहिंसा, सत्य, अस्तेय, ब्रह्मचर्य, अपरिग्रह), २. नियम (शौच, सन्तोष, तप, स्वाध्याय, ईश्वरप्रणिधान), ३. आसन, ४. प्राणायाम, ५. प्रत्याहार, ६. धारणा, ७. ध्यान, ८. समाधि।'
+      },
+      {
+        term: 'सप्तभङ्गी नय / स्याद्वाद',
+        category: 'pramana',
+        short: 'जैन दर्शन की सापेक्ष कथन-पद्धति (‘स्यात्’ = कदाचित् / किसी अपेक्षा से)',
+        detail: 'सत्य के बहुआयामी स्वरूप को व्यक्त करने के लिए ‘स्यात्’ के साथ ७ भङ्गों (स्यादस्ति, स्यान्नास्ति, स्यादस्ति नास्ति च, स्यादवक्तव्यम् आदि) का प्रयोग किया जाता है।'
+      },
+      {
+        term: 'प्रतीत्यसमुत्पाद',
+        category: 'tattva',
+        short: 'हेतु-प्रत्यय से वस्तुओं का परस्पर निर्भर आविर्भाव',
+        detail: '‘अस्मिन् सति इदं भवति’ (इसके होने से यह होता है)। कोई भी घटना या वस्तु स्वतन्त्र रूप से नहीं, अपितु कारणों और परिस्थितियों के संयोग से उत्पन्न व नष्ट होती है।'
+      },
+      {
+        term: 'चतुःसत्य व अष्टाङ्गिक मार्ग',
+        category: 'sadhana',
+        short: 'बौद्ध साधना के ४ आर्य सत्य और ८ मार्ग-अङ्ग',
+        detail: 'चतुःसत्य: १. दुःख, २. दुःख-समुदय, ३. दुःख-निरोध, ४. दुःख-निरोध-गामिनी प्रतिपदा। अष्टाङ्गिक मार्ग: सम्यक् दृष्टि, संकल्प, वाक्, कर्म, आजीव, व्यायाम, स्मृति व समाधि।'
+      },
+      {
+        term: 'प्रमुख प्रमाण (प्रत्यक्ष, अनुमान, उपमान, अर्थापत्ति, अनुपलब्धि)',
+        category: 'pramana',
+        short: 'यथार्थ ज्ञान के साधन',
+        detail: 'प्रत्यक्ष: इन्द्रिय-सन्निकर्ष से ज्ञान। अनुमान: व्याप्ति के आधार पर ज्ञान (जैसे धुएँ से अग्नि)। उपमान: सादृश्य से ज्ञान। अर्थापत्ति: विरोधाभास दूर करने हेतु कल्पना। अनुपलब्धि: अभाव का प्रत्यक्ष-रहित बोध।'
+      }
+    ];
+
+    // ==========================================
+    // ५. प्रश्नोत्तरी (८ प्रश्न)
+    // ==========================================
+    const QUIZ_DATA = [
+      {
+        question: 'भारतीय दर्शन में ‘आस्तिक’ और ‘नास्तिक’ वर्गीकरण का मुख्य आधार क्या है?',
+        options: [
+          'वेद-प्रामाण्य (वेदों को प्रमाण मानना या न मानना)',
+          'केवल ईश्वर के अस्तित्व को मानना या न मानना',
+          'मूर्ति-पूजा करना या न करना',
+          'संन्यास लेना या गृहस्थ रहना'
+        ],
+        correct: 0,
+        explanation: 'भारतीय दर्शन में जो परम्पराएँ वेदों को प्रमाण मानती हैं वे ‘आस्तिक’ और जो वेद-प्रामाण्य को अस्वीकार करती हैं वे ‘नास्तिक’ कहलाती हैं।'
+      },
+      {
+        question: '‘योगश्चित्तवृत्तिनिरोधः’ किस ग्रन्थ का प्रसिद्ध सूत्र है?',
+        options: ['न्यायसूत्र', 'योगसूत्र', 'वैशेषिकसूत्र', 'मीमांसासूत्र'],
+        correct: 1,
+        explanation: 'यह महर्षि पतञ्जलि रचित योगसूत्र के समाधिपाद का दूसरा सूत्र है।'
+      },
+      {
+        question: '‘अथातो धर्मजिज्ञासा’ से किस दर्शन का आरम्भ होता है?',
+        options: ['सांख्य दर्शन', 'बौद्ध दर्शन', 'मीमांसा (पूर्व मीमांसा) दर्शन', 'चार्वाक दर्शन'],
+        correct: 2,
+        explanation: 'महर्षि जैमिनि के मीमांसासूत्र का प्रथम सूत्र ‘अथातो धर्मजिज्ञासा’ है।'
+      },
+      {
+        question: 'कौन-सा दर्शन केवल ‘प्रत्यक्ष’ को ही एकमात्र प्रमाण मानता है?',
+        options: ['न्याय', 'चार्वाक / लोकायत', 'योग', 'जैन'],
+        correct: 1,
+        explanation: 'चार्वाक (लोकायत) दर्शन प्रत्यक्ष को एकमात्र प्रमाण मानता है और अनुमान तथा शब्द को स्वतन्त्र प्रमाण नहीं मानता।'
+      },
+      {
+        question: 'परमाणुवाद और सप्तपदार्थ का विवेचन किस दर्शन की प्रमुख विशेषता है?',
+        options: ['वैशेषिक दर्शन', 'सांख्य दर्शन', 'चार्वाक दर्शन', 'अद्वैत वेदान्त'],
+        correct: 0,
+        explanation: 'महर्षि कणाद के वैशेषिक दर्शन में परमाणुओं और द्रव्य, गुण, कर्म आदि पदार्थों का सूक्ष्म विश्लेषण मिलता है।'
+      },
+      {
+        question: '‘अनेकान्तवाद’ और ‘स्याद्वाद’ किस परम्परा से जुड़े हैं?',
+        options: ['बौद्ध दर्शन', 'जैन दर्शन', 'योग दर्शन', 'न्याय दर्शन'],
+        correct: 1,
+        explanation: 'अनेकान्तवाद और स्याद्वाद जैन दर्शन की प्रमुख ज्ञान-मीमांसात्मक व तात्त्विक विशेषताएँ हैं।'
+      },
+      {
+        question: 'वेदान्त में ‘प्रस्थानत्रयी’ के अन्तर्गत कौन-से तीन ग्रन्थ आते हैं?',
+        options: [
+          'रामायण, महाभारत, पुराण',
+          'उपनिषद्, भगवद्गीता, ब्रह्मसूत्र',
+          'न्यायसूत्र, सांख्यकारिका, योगसूत्र',
+          'विनयपिटक, सुत्तपिटक, अभिधम्मपिटक'
+        ],
+        correct: 1,
+        explanation: 'उपनिषद्, श्रीमद्भगवद्गीता और ब्रह्मसूत्र को सम्मिलित रूप से ‘प्रस्थानत्रयी’ कहा जाता है।'
+      },
+      {
+        question: '‘यः प्रतीत्यसमुत्पादः सा शून्यता प्रकीर्तिता’ — यह कथन किस आचार्य से सम्बद्ध है?',
+        options: ['आचार्य नागार्जुन', 'महर्षि कपिल', 'रामानुजाचार्य', 'मध्वाचार्य'],
+        correct: 0,
+        explanation: 'माध्यमिक दर्शन के प्रवर्तक आचार्य नागार्जुन ने प्रतीत्यसमुत्पाद और शून्यता के अभिन्न सम्बन्ध को प्रतिपादित किया।'
+      }
+    ];
+
+    // ==========================================
+    // अवस्था (STATE) व रेंडर फ़ंक्शन्स
+    // ==========================================
+
+    const originalThinkerNames = ["Yajnavalkya", "Gautama Buddha", "Mahavira", "Kanada", "Kapila", "Patanjali", "Nagarjuna", "Shankara", "Ramanuja", "Madhva", "Vivekananda", "Radhakrishnan"];
+    THINKERS_DATA.forEach((thinker, index) => { thinker.roman = originalThinkerNames[index]; });
+    THINKERS_DATA.push(...[{"name": "गार्गी वाचक्नवी", "period": "Early Upaniṣadic period", "eraGroup": "ancient-shramana", "tradition": "उपनिषद्", "quote": "सार · Questions Yājñavalkya about what the world is ultimately woven upon, pushing the dialogue beyond ordinary explanations.", "meaning": "Questions Yājñavalkya about what the world is ultimately woven upon, pushing the dialogue beyond ordinary explanations.", "contribution": "पठन · Bṛhadāraṇyaka Upaniṣad 3.6 and 3.8", "roman": "Gārgī Vācaknavī"}, {"name": "मैत्रेयी", "period": "Early Upaniṣadic period", "eraGroup": "ancient-shramana", "tradition": "उपनिषद्", "quote": "सार · Asks whether wealth can bring immortality. Her question prompts a discussion about why ज्ञान of the self matters.", "meaning": "Asks whether wealth can bring immortality. Her question prompts a discussion about why ज्ञान of the self matters.", "contribution": "पठन · Bṛhadāraṇyaka Upaniṣad 2.4 and 4.5", "roman": "Maitreyī"}, {"name": "अक्षपाद गौतम", "period": "Early classical period", "eraGroup": "classical-sutra", "tradition": "भारतीय दर्शन", "quote": "सार · The Nyāya Sūtra attributed to him distinguishes genuine ways of knowing and lays out the structure of inquiry and debate.", "meaning": "The Nyāya Sūtra attributed to him distinguishes genuine ways of knowing and lays out the structure of inquiry and debate.", "contribution": "पठन · Nyāya Sūtra", "roman": "Akṣapāda Gautama"}, {"name": "जैमिनि", "period": "Early classical period", "eraGroup": "classical-sutra", "tradition": "भारतीय दर्शन", "quote": "सार · Treats the Vedic injunction as a means of knowing धर्म and asks how to interpret it when passages appear to conflict.", "meaning": "Treats the Vedic injunction as a means of knowing धर्म and asks how to interpret it when passages appear to conflict.", "contribution": "पठन · Mīmāṃsā Sūtra", "roman": "Jaimini"}, {"name": "बादरायण", "period": "Early classical period", "eraGroup": "classical-sutra", "tradition": "भारतीय दर्शन", "quote": "सार · The Brahma Sūtra attributed to him brings Upaniṣadic teachings into a systematic inquiry into ब्रह्म.", "meaning": "The Brahma Sūtra attributed to him brings Upaniṣadic teachings into a systematic inquiry into ब्रह्म.", "contribution": "पठन · Brahma Sūtra", "roman": "Bādarāyaṇa"}, {"name": "उमास्वाति / उमास्वामी", "period": "Early centuries CE", "eraGroup": "classical-sutra", "tradition": "भारतीय दर्शन", "quote": "सार · Systematizes Jain teachings around right faith, right knowledge and right conduct as the path to liberation.", "meaning": "Systematizes Jain teachings around right faith, right knowledge and right conduct as the path to liberation.", "contribution": "पठन · Tattvārtha Sūtra 1.1", "roman": "Umāsvāti / Umāsvāmin"}, {"name": "कुन्दकुन्द", "period": "Date uncertain", "eraGroup": "classical-sutra", "tradition": "जैन दर्शन", "quote": "सार · Distinguishes a practical standpoint (व्यवहार नय) from the standpoint of the pure self (निश्चय नय).", "meaning": "Distinguishes a practical standpoint (व्यवहार नय) from the standpoint of the pure self (निश्चय नय).", "contribution": "पठन · Samayasāra", "roman": "Kundakunda"}, {"name": "ईश्वरकृष्ण", "period": "c. 4th–5th century", "eraGroup": "classical-sutra", "tradition": "भारतीय दर्शन", "quote": "सार · Argues that the conscious witness and the processes of nature are distinct. Distinguishing them is central to liberation.", "meaning": "Argues that the conscious witness and the processes of nature are distinct. Distinguishing them is central to liberation.", "contribution": "पठन · Sāṃkhya Kārikā", "roman": "Īśvarakṛṣṇa"}, {"name": "वसुबन्धु", "period": "c. 4th–5th century", "eraGroup": "classical-sutra", "tradition": "भारतीय दर्शन", "quote": "सार · Examines how the apparent division between subject and object can be understood through processes of cognition.", "meaning": "Examines how the apparent division between subject and object can be understood through processes of cognition.", "contribution": "पठन · Twenty Verses and Thirty Verses", "roman": "Vasubandhu"}, {"name": "भर्तृहरि", "period": "c. 5th century CE", "eraGroup": "classical-sutra", "tradition": "व्याकरण", "quote": "सार · Treats language and cognition as intimately connected. Understanding a sentence involves grasping its meaning as a whole.", "meaning": "Treats language and cognition as intimately connected. Understanding a sentence involves grasping its meaning as a whole.", "contribution": "पठन · Vākyapadīya", "roman": "Bhartṛhari"}, {"name": "दिङ्नाग", "period": "c. 5th–6th century", "eraGroup": "classical-sutra", "tradition": "भारतीय दर्शन", "quote": "सार · Distinguishes perception from inference and develops an account of how a reason supports a conclusion.", "meaning": "Distinguishes perception from inference and develops an account of how a reason supports a conclusion.", "contribution": "पठन · Pramāṇasamuccaya", "roman": "Dignāga"}, {"name": "धर्मकीर्ति", "period": "c. 7th century", "eraGroup": "classical-sutra", "tradition": "भारतीय दर्शन", "quote": "सार · Develops Buddhist theories of perception and inference, tying reliable cognition to successful action.", "meaning": "Develops Buddhist theories of perception and inference, tying reliable cognition to successful action.", "contribution": "पठन · Pramāṇavārttika", "roman": "Dharmakīrti"}, {"name": "कुमारिल भट्ट", "period": "c. 7th century", "eraGroup": "classical-sutra", "tradition": "भारतीय दर्शन", "quote": "सार · Defends the authority of the authorless Veda and argues for the prima facie validity of cognition.", "meaning": "Defends the authority of the authorless Veda and argues for the prima facie validity of cognition.", "contribution": "पठन · Ślokavārttika", "roman": "Kumārila Bhaṭṭa"}, {"name": "शान्तिदेव", "period": "c. 8th century CE", "eraGroup": "classical-sutra", "tradition": "बौद्ध दर्शन", "quote": "सार · Explains how cultivating बोधिचित्त and exchanging self and other can loosen self-centeredness and deepen compassion.", "meaning": "Explains how cultivating बोधिचित्त and exchanging self and other can loosen self-centeredness and deepen compassion.", "contribution": "पठन · Bodhicaryāvatāra, especially chapter 8", "roman": "Śāntideva"}, {"name": "उत्पलदेव", "period": "c. 10th century CE", "eraGroup": "acharya-bhakti", "tradition": "शैव दर्शन", "quote": "सार · Argues that recognition (प्रत्यभिज्ञा) of oneself as universal consciousness is the heart of liberation.", "meaning": "Argues that recognition (प्रत्यभिज्ञा) of oneself as universal consciousness is the heart of liberation.", "contribution": "पठन · Īśvarapratyabhijñākārikā", "roman": "Utpaladeva"}, {"name": "अभिनवगुप्त", "period": "c. 10th–11th century", "eraGroup": "acharya-bhakti", "tradition": "भारतीय दर्शन", "quote": "सार · Elaborates Śaiva recognition philosophy and explains how a work of art opens up a shared experience of रस, or aesthetic flavor.", "meaning": "Elaborates Śaiva recognition philosophy and explains how a work of art opens up a shared experience of रस, or aesthetic flavor.", "contribution": "पठन · Īśvarapratyabhijñāvimarśinī and Abhinavabhāratī", "roman": "Abhinavagupta"}, {"name": "गंगेश उपाध्याय", "period": "c. 13th–14th century", "eraGroup": "acharya-bhakti", "tradition": "भारतीय दर्शन", "quote": "सार · Develops the precise analysis of knowledge and inference associated with Navya-Nyāya.", "meaning": "Develops the precise analysis of knowledge and inference associated with Navya-Nyāya.", "contribution": "पठन · Tattvacintāmaṇi", "roman": "Gaṅgeśa"}, {"name": "कबीर", "period": "c. 15th century", "eraGroup": "acharya-bhakti", "tradition": "भारतीय दर्शन", "quote": "सार · Challenges religious status and empty ritual through poetry that urges direct devotion and inner transformation.", "meaning": "Challenges religious status and empty ritual through poetry that urges direct devotion and inner transformation.", "contribution": "पठन · Bījak", "roman": "Kabir"}, {"name": "गुरु नानक", "period": "1469–1539", "eraGroup": "acharya-bhakti", "tradition": "सिख दर्शन", "quote": "सार · Divine oneness has consequences for daily life. Remembering the divine, honest work and sharing help loosen ego and sustain community.", "meaning": "Divine oneness has consequences for daily life. Remembering the divine, honest work and sharing help loosen ego and sustain community.", "contribution": "पठन · Japjī Sahib", "roman": "Guru Nanak"}, {"name": "मीराबाई", "period": "c. 16th century CE", "eraGroup": "acharya-bhakti", "tradition": "भक्ति", "quote": "सार · Songs attributed to her express intense कृष्ण भक्ति and a willingness to challenge social expectations for the sake of devotion.", "meaning": "Songs attributed to her express intense कृष्ण भक्ति and a willingness to challenge social expectations for the sake of devotion.", "contribution": "पठन · Songs attributed to Mīrābāī", "roman": "Mīrābāī"}, {"name": "दारा शिकोह", "period": "1615–1659", "eraGroup": "acharya-bhakti", "tradition": "भारतीय–फ़ारसी संवाद", "quote": "सार · Draws parallels between Sufi and Indian teachings about ultimate reality and sponsors a Persian translation of the Upaniṣads.", "meaning": "Draws parallels between Sufi and Indian teachings about ultimate reality and sponsors a Persian translation of the Upaniṣads.", "contribution": "पठन · Majmaʿ al-Baḥrayn and Sirr-i Akbar", "roman": "Dārā Shikōh"}, {"name": "ज्योतिराव फुले", "period": "1827–1890", "eraGroup": "modern", "tradition": "जाति-विरोधी चिंतन", "quote": "सार · Attacks caste domination and its religious justifications, arguing that education can help oppressed communities gain agency.", "meaning": "Attacks caste domination and its religious justifications, arguing that education can help oppressed communities gain agency.", "contribution": "पठन · Gulamgiri (Slavery)", "roman": "Jyotirao Phule"}, {"name": "सावित्रीबाई फुले", "period": "1831–1897", "eraGroup": "modern", "tradition": "शिक्षा व समाज-सुधार", "quote": "सार · Uses poetry and educational work to challenge caste and gender exclusion and urge people to seek learning.", "meaning": "Uses poetry and educational work to challenge caste and gender exclusion and urge people to seek learning.", "contribution": "पठन · Kavya Phule", "roman": "Savitribai Phule"}, {"name": "पंडिता रमाबाई", "period": "1858–1922", "eraGroup": "modern", "tradition": "शिक्षा व समाज-सुधार", "quote": "सार · Documents the conditions of high-caste Hindu women and argues for education and meaningful independence.", "meaning": "Documents the conditions of high-caste Hindu women and argues for education and meaningful independence.", "contribution": "पठन · The High-Caste Hindu Woman", "roman": "Pandita Ramabai"}, {"name": "रवीन्द्रनाथ ठाकुर", "period": "1861–1941", "eraGroup": "modern", "tradition": "शिक्षा व मानवतावाद", "quote": "सार · Defends human freedom and creative education and questions the elevation of nation and state above human relationships.", "meaning": "Defends human freedom and creative education and questions the elevation of nation and state above human relationships.", "contribution": "पठन · Nationalism and The Religion of Man", "roman": "Rabindranath Tagore"}, {"name": "मोहनदास करमचन्द गांधी", "period": "1869–1948", "eraGroup": "modern", "tradition": "स्वराज और सत्याग्रह", "quote": "सार · Links self-rule (स्वराज) to personal and collective discipline. सत्याग्रह uses truth and nonviolence as a method of political action.", "meaning": "Links self-rule (स्वराज) to personal and collective discipline. सत्याग्रह uses truth and nonviolence as a method of political action.", "contribution": "पठन · Hind स्वराज and सत्याग्रह in South Africa", "roman": "M. K. Gandhi"}, {"name": "श्री अरविन्द", "period": "1872–1950", "eraGroup": "modern", "tradition": "समन्वित योग", "quote": "सार · Sees spiritual practice as part of a fuller transformation of human life and consciousness.", "meaning": "Sees spiritual practice as part of a fuller transformation of human life and consciousness.", "contribution": "पठन · The Life Divine and The Synthesis of Yoga", "roman": "Sri Aurobindo"}, {"name": "भीमराव रामजी आंबेडकर", "period": "1891–1956", "eraGroup": "modern", "tradition": "नवयान और सामाजिक न्याय", "quote": "सार · Argues that caste must be dismantled for social democracy to flourish. Reinterprets Buddhism around ethical and social life.", "meaning": "Argues that caste must be dismantled for social democracy to flourish. Reinterprets Buddhism around ethical and social life.", "contribution": "पठन · Annihilation of Caste and The Buddha and His Dhamma", "roman": "B. R. Ambedkar"}]);
+    CONCEPTS_DATA.push(...[{"term": "नियतिवाद", "category": "tattva", "short": "आजीवक और नियति", "detail": "आजीवक परम्परा को नियति के सिद्धान्त से जोड़ा जाता है। उसके अपने ग्रन्थ उपलब्ध नहीं हैं। दीघ निकाय २ में एक बौद्ध विवरण मिलता है।"}, {"term": "अभिधर्म, मध्यमक और योगाचार", "category": "tattva", "short": "बौद्ध दर्शन की तीन धाराएँ", "detail": "अभिधर्म अनुभव के घटकों का वर्गीकरण करता है। मध्यमक स्वभाव और शून्यता की जाँच करता है। योगाचार पूछता है कि अनुभव में ज्ञाता और ज्ञेय का भेद कैसे उभरता है।"}, {"term": "प्रत्यक्ष और अनुमान", "category": "pramana", "short": "धुआँ देखने और आग जानने में अन्तर", "detail": "पहाड़ी पर धुआँ दिखाई देना प्रत्यक्ष है। धुएँ और आग के सम्बन्ध से वहाँ आग होने का निष्कर्ष निकालना अनुमान है। न्याय इसके साथ उपमान और शब्द को भी प्रमाण मानता है।"}, {"term": "भक्ति", "category": "sadhana", "short": "प्रेम, स्मरण और समर्पण", "detail": "भक्ति की अनेक धाराएँ गीत, पूजा और स्मरण पर बल देती हैं। कबीर और मीराबाई की रचनाएँ इसकी अलग-अलग अभिव्यक्तियाँ दिखाती हैं।"}, {"term": "प्रत्यभिज्ञा", "category": "sadhana", "short": "कश्मीर शैव दर्शन में पहचान", "detail": "उत्पलदेव के अनुसार मुक्ति अपने स्वरूप को सार्वभौम चेतना के रूप में पहचानने से जुड़ी है।"}, {"term": "रस", "category": "tattva", "short": "कला के अनुभव का आस्वाद", "detail": "नाट्यशास्त्र में रस नाटक और काव्य से उत्पन्न सौन्दर्य-अनुभव है। अभिनवगुप्त पूछते हैं कि दर्शक किसी निजी घटना से परे एक भाव का आस्वाद कैसे लेते हैं।"}, {"term": "निष्काम कर्म", "category": "sadhana", "short": "फल की आसक्ति के बिना कर्म", "detail": "भगवद्गीता २.४७ में कृष्ण अर्जुन को कर्म करने और उसके फल पर अपना दावा छोड़ने को कहते हैं। श्लोक अकर्मण्यता से जुड़ी आसक्ति से भी सावधान करता है।"}, {"term": "स्वराज और सत्याग्रह", "category": "sadhana", "short": "गांधी के राजनीतिक चिंतन की दो संकल्पनाएँ", "detail": "स्वराज व्यक्तिगत और सामूहिक स्वशासन से जुड़ा है। सत्याग्रह सत्य और अहिंसा पर आधारित प्रतिरोध का अभ्यास है।"}]);
+
+    let activeTab = 'map';
+    let currentSchoolFilter = 'all';
+    let expandedSchoolId = 'nyaya';
+    let currentSubSection = 'timeline';
+    let activeTimelineIdx = 0;
+    let currentThinkerFilter = 'all';
+    let expandedThinkerIdx = 0;
+    let currentConceptFilter = 'all';
+    let expandedConceptIdx = 0;
+    let quizIndex = 0;
+    let quizScore = 0;
+    let quizAnswered = false;
+
+    const TAB_LABELS = {
+      'map': 'मानचित्र',
+      'schools': 'दर्शन (९)',
+      'timeline-thinkers': 'कालक्रम व विचारक',
+      'concepts': 'अवधारणाएँ',
+      'quiz': 'प्रश्नोत्तरी'
+    };
+
+    function switchTab(tabId) {
+      activeTab = tabId;
+
+      // Update header badge
+      const badge = document.getElementById('header-status-badge');
+      if (badge && TAB_LABELS[tabId]) {
+        badge.textContent = TAB_LABELS[tabId];
+      }
+
+      // Toggle view visibility
+      document.querySelectorAll('.tab-view').forEach(view => {
+        view.classList.add('hidden');
+      });
+      const targetView = document.getElementById(`view-${tabId}`);
+      if (targetView) {
+        targetView.classList.remove('hidden');
+      }
+
+      // Update top sub-tab buttons
+      document.querySelectorAll('.top-tab-btn').forEach(btn => {
+        btn.classList.remove('bg-ink', 'text-parchment', 'font-bold', 'shadow-sm');
+        btn.classList.add('bg-cardBg', 'text-inkMuted', 'font-semibold', 'border', 'border-borderWarm');
+        btn.setAttribute('aria-selected', 'false');
+      });
+      const activeTopBtn = document.getElementById(`top-tab-${tabId}`);
+      if (activeTopBtn) {
+        activeTopBtn.classList.remove('bg-cardBg', 'text-inkMuted', 'font-semibold', 'border', 'border-borderWarm');
+        activeTopBtn.classList.add('bg-ink', 'text-parchment', 'font-bold', 'shadow-sm');
+        activeTopBtn.setAttribute('aria-selected', 'true');
+      }
+
+      // Update bottom navigation buttons
+      document.querySelectorAll('.bottom-nav-btn').forEach(btn => {
+        btn.classList.remove('text-saffron', 'bg-saffronLight/60');
+        btn.classList.add('text-inkMuted');
+      });
+      const activeNavBtn = document.getElementById(`nav-${tabId}`);
+      if (activeNavBtn) {
+        activeNavBtn.classList.remove('text-inkMuted');
+        activeNavBtn.classList.add('text-saffron', 'bg-saffronLight/60');
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function openSchoolsWithFilter(category) {
+      filterSchools(category);
+      switchTab('schools');
+    }
+
+    function filterSchools(category) {
+      currentSchoolFilter = category;
+      document.querySelectorAll('.filter-pill').forEach(btn => {
+        btn.classList.remove('bg-ink', 'text-parchment', 'shadow-sm');
+        btn.classList.add('bg-cardBg', 'text-ink', 'border', 'border-borderWarm');
+      });
+      const activeBtn = document.getElementById(`filter-${category}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-cardBg', 'text-ink', 'border', 'border-borderWarm');
+        activeBtn.classList.add('bg-ink', 'text-parchment', 'shadow-sm');
+      }
+      const filtered = SCHOOLS_DATA.filter(s => currentSchoolFilter === 'all' || s.category === currentSchoolFilter);
+      if (filtered.length > 0 && !filtered.some(s => s.id === expandedSchoolId)) {
+        expandedSchoolId = filtered[0].id;
+      }
+      renderSchools();
+    }
+
+    function toggleSchool(id) {
+      expandedSchoolId = (expandedSchoolId === id) ? null : id;
+      renderSchools();
+    }
+
+    function renderSchools() {
+      const container = document.getElementById('schools-container');
+      const countLabel = document.getElementById('schools-count-label');
+      const filtered = SCHOOLS_DATA.filter(s => currentSchoolFilter === 'all' || s.category === currentSchoolFilter);
+
+      if (countLabel) {
+        countLabel.textContent = `${filtered.length} दर्शन`;
+      }
+
+      container.innerHTML = filtered.map((school, idx) => {
+        const isOpen = expandedSchoolId === school.id;
+        const isAstika = school.category === 'astika';
+        const badgeStyle = isAstika
+          ? 'bg-saffronLight text-saffron border-saffron/30'
+          : 'bg-sageLight text-sage border-sage/30';
+        const borderAccent = isOpen
+          ? (isAstika ? 'border-saffron shadow-card-active' : 'border-sage shadow-card-active')
+          : 'border-borderWarm shadow-scholarly';
+
+        return `
+          <article class="bg-cardBg rounded-2xl border ${borderAccent} transition-all duration-200 overflow-hidden animate-fade-up" style="animation-delay: ${idx * 30}ms">
+            <button onclick="toggleSchool('${school.id}')"
+              aria-expanded="${isOpen}"
+              class="touch-target w-full text-left p-4 flex items-start justify-between gap-3 focus:outline-none">
+              <div class="space-y-1">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <h3 class="font-serif text-lg font-bold text-ink">${school.name}</h3>
+                  <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full border ${badgeStyle}">
+                    ${isAstika ? 'आस्तिक' : 'नास्तिक'}
+                  </span>
+                </div>
+                <p class="text-xs text-inkMuted font-medium leading-snug">${school.tagline}</p>
+              </div>
+
+              <div class="w-8 h-8 rounded-full bg-parchment flex items-center justify-center shrink-0 mt-0.5 text-inkMuted transition-transform duration-300 ${isOpen ? 'rotate-180 bg-ink text-parchment' : ''}">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </button>
+
+            <div class="accordion-content ${isOpen ? 'open' : ''}">
+              <div class="accordion-inner">
+                <div class="px-4 pb-4 pt-1 border-t border-borderWarm/70 space-y-2.5 text-xs">
+                  <div class="bg-parchment/85 p-3 rounded-xl space-y-1">
+                    <p><strong class="text-ink">प्रवर्तक / संस्थापक:</strong> <span class="text-inkMuted">${school.founder}</span></p>
+                    <p><strong class="text-ink">मुख्य ग्रन्थ:</strong> <span class="text-inkMuted">${school.text}</span></p>
+                    <p><strong class="text-ink">उप-धाराएँ / संप्रदाय:</strong> <span class="text-inkMuted">${school.subSchools}</span></p>
+                  </div>
+
+                  <p class="text-ink leading-relaxed text-[13px]">${school.summary}</p>
+
+                  <div class="bg-white p-3 rounded-xl border border-borderWarm/80 space-y-2">
+                    <div>
+                      <span class="text-[11px] font-bold text-saffron block mb-0.5">तत्त्वमीमांसा</span>
+                      <p class="text-inkMuted leading-relaxed">${school.metaphysics}</p>
+                    </div>
+                    <div class="pt-1.5 border-t border-borderWarm/60">
+                      <span class="text-[11px] font-bold text-sage block mb-0.5">प्रमाणमीमांसा (प्रमाण)</span>
+                      <p class="text-inkMuted leading-relaxed">${school.epistemology}</p>
+                    </div>
+                  </div>
+
+                  <blockquote class="bg-goldLight/65 border-l-4 border-gold p-3 rounded-r-xl">
+                    <p class="font-serif italic font-semibold text-sm text-ink mb-1">${school.quoteOriginal}</p>
+                    <p class="text-inkMuted leading-snug">${school.quoteMeaning}</p>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function switchSubSection(sub) {
+      currentSubSection = sub;
+      const btnTimeline = document.getElementById('subtab-timeline');
+      const btnThinkers = document.getElementById('subtab-thinkers');
+      const viewTimeline = document.getElementById('subview-timeline');
+      const viewThinkers = document.getElementById('subview-thinkers');
+
+      if (sub === 'timeline') {
+        btnTimeline.className = 'touch-target py-2 px-3 rounded-xl text-xs font-bold transition-all bg-cardBg text-ink shadow-sm';
+        btnThinkers.className = 'touch-target py-2 px-3 rounded-xl text-xs font-bold transition-all text-inkMuted hover:text-ink';
+        viewTimeline.classList.remove('hidden');
+        viewThinkers.classList.add('hidden');
+        renderTimeline();
+      } else {
+        btnThinkers.className = 'touch-target py-2 px-3 rounded-xl text-xs font-bold transition-all bg-cardBg text-ink shadow-sm';
+        btnTimeline.className = 'touch-target py-2 px-3 rounded-xl text-xs font-bold transition-all text-inkMuted hover:text-ink';
+        viewThinkers.classList.remove('hidden');
+        viewTimeline.classList.add('hidden');
+        renderThinkers();
+      }
+    }
+
+    function renderTimeline() {
+      const container = document.getElementById('timeline-container');
+      container.innerHTML = TIMELINE_DATA.map((item, idx) => {
+        const isActive = activeTimelineIdx === idx;
+        const dotColor = item.color === 'gold' ? 'bg-gold' : (item.color === 'saffron' ? 'bg-saffron' : 'bg-sage');
+
+        return `
+          <div class="relative">
+            <span class="absolute -left-6 top-4 w-3.5 h-3.5 rounded-full ${dotColor} ring-4 ring-parchment transition-transform ${isActive ? 'scale-125' : ''}"></span>
+            <button onclick="selectTimeline(${idx})"
+              class="touch-target w-full text-left bg-cardBg rounded-2xl p-4 border ${isActive ? 'border-ink shadow-scholarly' : 'border-borderWarm'} transition-all">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="text-xs font-bold text-saffron">${item.era}</span>
+                <span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-parchmentDark text-inkMuted">
+                  ${item.badge}
+                </span>
+              </div>
+              <h3 class="font-serif text-base font-bold text-ink">${item.title}</h3>
+              <p class="text-xs text-inkMuted mt-1 leading-relaxed">${item.summary}</p>
+              ${isActive ? `
+                <div class="mt-3 pt-2.5 border-t border-borderWarm text-xs text-ink bg-parchment/75 p-3 rounded-xl leading-relaxed animate-fade-up">
+                  ${item.details}
+                </div>
+              ` : ''}
+            </button>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function selectTimeline(idx) {
+      activeTimelineIdx = idx;
+      renderTimeline();
+    }
+
+    function filterThinkers(group) {
+      currentThinkerFilter = group;
+      document.querySelectorAll('.tfilter-pill').forEach(btn => {
+        btn.classList.remove('bg-ink', 'text-parchment', 'font-bold');
+        btn.classList.add('bg-cardBg', 'text-ink', 'font-semibold', 'border', 'border-borderWarm');
+      });
+      const activeBtn = document.getElementById(`tfilter-${group}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-cardBg', 'text-ink', 'font-semibold', 'border', 'border-borderWarm');
+        activeBtn.classList.add('bg-ink', 'text-parchment', 'font-bold');
+      }
+      expandedThinkerIdx = 0;
+      renderThinkers();
+    }
+
+    function toggleThinker(idx) {
+      expandedThinkerIdx = (expandedThinkerIdx === idx) ? null : idx;
+      renderThinkers();
+    }
+
+    function renderThinkers() {
+      const container = document.getElementById('thinkers-list-container');
+      const normalize = value => value.toLowerCase().normalize('NFD').replace(/([a-z])\p{M}+/gu, '$1').normalize('NFC');
+      const query = normalize(document.getElementById('thinker-search').value.trim());
+      const list = THINKERS_DATA.filter(t =>
+        (currentThinkerFilter === 'all' || t.eraGroup === currentThinkerFilter) &&
+        normalize([t.name, t.roman, t.tradition, t.quote, t.meaning, t.contribution].join(' ')).includes(query));
+      if (!list.length) {
+        container.innerHTML = '<p class="text-sm text-inkMuted" role="status">कोई विचारक नहीं मिला। दूसरा नाम या युग चुनें।</p>';
+        return;
+      }
+
+      container.innerHTML = list.map((t, idx) => {
+        const isOpen = expandedThinkerIdx === idx;
+        return `
+          <article class="bg-cardBg rounded-2xl border ${isOpen ? 'border-saffron shadow-card-active' : 'border-borderWarm shadow-scholarly'} overflow-hidden animate-fade-up">
+            <button onclick="toggleThinker(${idx})" aria-expanded="${isOpen}"
+              class="touch-target w-full text-left p-4 flex items-start justify-between gap-3">
+              <div>
+                <div class="flex items-center gap-2 flex-wrap mb-1">
+                  <span class="text-[11px] font-bold bg-saffronLight text-saffron px-2.5 py-0.5 rounded-full">${t.tradition}</span>
+                  <span class="text-[11px] text-inkMuted">${t.period}</span>
+                </div>
+                <h3 class="font-serif text-lg font-bold text-ink">${t.name}</h3>
+                <p class="font-serif italic text-sm text-ink mt-1 bg-parchment px-3 py-2 rounded-xl border-l-3 border-gold">
+                  ${t.quote}
+                </p>
+              </div>
+              <div class="w-8 h-8 rounded-full bg-parchment flex items-center justify-center shrink-0 mt-1 text-inkMuted transition-transform ${isOpen ? 'rotate-180 bg-ink text-parchment' : ''}">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </button>
+            <div class="accordion-content ${isOpen ? 'open' : ''}">
+              <div class="accordion-inner">
+                <div class="px-4 pb-4 pt-2 border-t border-borderWarm/70 text-xs space-y-2 bg-parchment/40">
+                  ${t.contribution.startsWith('पठन · ') ? '' : `<p><strong class="text-ink">भावार्थ:</strong> <span class="text-inkMuted leading-relaxed">${t.meaning}</span></p>`}
+                  <p><strong class="text-ink">दार्शनिक योगदान:</strong> <span class="text-inkMuted leading-relaxed">${t.contribution}</span></p>
+                </div>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function filterConcepts(category) {
+      currentConceptFilter = category;
+      document.querySelectorAll('.cfilter-pill').forEach(btn => {
+        btn.classList.remove('bg-sage', 'text-white', 'font-bold');
+        btn.classList.add('bg-cardBg', 'text-ink', 'font-semibold', 'border', 'border-borderWarm');
+      });
+      const activeBtn = document.getElementById(`cfilter-${category}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-cardBg', 'text-ink', 'font-semibold', 'border', 'border-borderWarm');
+        activeBtn.classList.add('bg-sage', 'text-white', 'font-bold');
+      }
+      expandedConceptIdx = 0;
+      renderConcepts();
+    }
+
+    function toggleConcept(idx) {
+      expandedConceptIdx = (expandedConceptIdx === idx) ? null : idx;
+      renderConcepts();
+    }
+
+    function renderConcepts() {
+      const container = document.getElementById('concepts-list-container');
+      const queryEl = document.getElementById('concept-search-input');
+      const query = (queryEl ? queryEl.value : '').trim().toLowerCase();
+
+      const catLabels = {
+        'tattva': 'तत्त्व व आत्मा',
+        'sadhana': 'साधना व मार्ग',
+        'pramana': 'प्रमाण व तर्क'
+      };
+
+      const filtered = CONCEPTS_DATA.filter(c => {
+        const matchesCat = currentConceptFilter === 'all' || c.category === currentConceptFilter;
+        const matchesQuery = !query ||
+          c.term.toLowerCase().includes(query) ||
+          c.short.toLowerCase().includes(query) ||
+          c.detail.toLowerCase().includes(query);
+        return matchesCat && matchesQuery;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="bg-cardBg rounded-2xl p-6 border border-borderWarm text-center text-xs text-inkMuted">
+            इस खोज के लिए कोई अवधारणा नहीं मिली। फ़िल्टर या खोज शब्द बदलकर देखें।
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filtered.map((item, idx) => {
+        const isOpen = expandedConceptIdx === idx;
+        return `
+          <article class="bg-cardBg rounded-2xl border ${isOpen ? 'border-sage shadow-scholarly' : 'border-borderWarm'} overflow-hidden animate-fade-up">
+            <button onclick="toggleConcept(${idx})" aria-expanded="${isOpen}"
+              class="touch-target w-full text-left p-4 flex items-start justify-between gap-3">
+              <div class="space-y-1">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <h3 class="font-serif text-base font-bold text-ink">${item.term}</h3>
+                  <span class="text-[10px] font-bold bg-sageLight text-sage px-2 py-0.5 rounded-full">
+                    ${catLabels[item.category] || 'अवधारणा'}
+                  </span>
+                </div>
+                <p class="text-xs text-inkMuted leading-snug">${item.short}</p>
+              </div>
+              <div class="w-8 h-8 rounded-full bg-parchment flex items-center justify-center shrink-0 mt-0.5 text-inkMuted transition-transform ${isOpen ? 'rotate-180 bg-sage text-white' : ''}">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </button>
+            <div class="accordion-content ${isOpen ? 'open' : ''}">
+              <div class="accordion-inner">
+                <div class="px-4 pb-4 pt-2 border-t border-borderWarm/70 text-xs text-ink leading-relaxed bg-sageLight/25">
+                  ${item.detail}
+                </div>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function renderQuiz() {
+      const counter = document.getElementById('quiz-counter');
+      const body = document.getElementById('quiz-body');
+
+      if (quizIndex >= QUIZ_DATA.length) {
+        counter.textContent = 'पूर्ण';
+        body.innerHTML = `
+          <div class="text-center py-4 space-y-3 animate-fade-up">
+            <div class="w-14 h-14 rounded-full bg-goldLight border border-gold/40 text-gold mx-auto flex items-center justify-center font-serif font-bold text-xl">
+              ${quizScore}/${QUIZ_DATA.length}
+            </div>
+            <h3 class="font-serif text-lg font-bold text-ink">
+              ${quizScore >= 6 ? 'उत्कृष्ट दर्शन-बोध!' : 'अच्छा प्रयास!'}
+            </h3>
+            <p class="text-xs text-inkMuted max-w-xs mx-auto leading-relaxed">
+              आपने ${QUIZ_DATA.length} में से ${quizScore} प्रश्नों के सही उत्तर दिए। अन्य टैब में जाकर दर्शन, विचारकों व अवधारणाओं का पुनरावलोकन करें।
+            </p>
+            <button onclick="restartQuiz()"
+              class="touch-target px-5 py-2.5 rounded-full bg-ink text-parchment text-xs font-bold hover:bg-saffron transition-colors">
+              पुनः प्रयास करें
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      const q = QUIZ_DATA[quizIndex];
+      counter.textContent = `${quizIndex + 1} / ${QUIZ_DATA.length}`;
+
+      body.innerHTML = `
+        <p class="text-sm font-bold text-ink leading-snug">${q.question}</p>
+        <div class="space-y-2" id="quiz-options">
+          ${q.options.map((opt, idx) => `
+            <button onclick="answerQuiz(${idx})"
+              class="quiz-opt-btn touch-target w-full text-left p-3.5 rounded-xl border border-borderWarm bg-parchment/60 hover:border-saffron text-xs font-medium text-ink transition-all">
+              ${opt}
+            </button>
+          `).join('')}
+        </div>
+        <div id="quiz-feedback" class="hidden"></div>
+      `;
+    }
+
+    function answerQuiz(selectedIdx) {
+      if (quizAnswered) return;
+      quizAnswered = true;
+
+      const q = QUIZ_DATA[quizIndex];
+      const isCorrect = selectedIdx === q.correct;
+      if (isCorrect) quizScore++;
+
+      const buttons = document.querySelectorAll('.quiz-opt-btn');
+      buttons.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === q.correct) {
+          btn.classList.remove('bg-parchment/60', 'border-borderWarm');
+          btn.classList.add('bg-sageLight', 'border-sage', 'text-sage', 'font-bold');
+        } else if (idx === selectedIdx && !isCorrect) {
+          btn.classList.remove('bg-parchment/60', 'border-borderWarm');
+          btn.classList.add('bg-saffronLight', 'border-saffron', 'text-saffron');
+        }
+      });
+
+      const feedback = document.getElementById('quiz-feedback');
+      feedback.classList.remove('hidden');
+      feedback.innerHTML = `
+        <div class="mt-3 p-3.5 rounded-xl text-xs leading-relaxed animate-fade-up ${isCorrect ? 'bg-sageLight/70 text-ink border border-sage/30' : 'bg-saffronLight/70 text-ink border border-saffron/30'}">
+          <strong class="${isCorrect ? 'text-sage' : 'text-saffron'}">${isCorrect ? 'सही उत्तर!' : 'व्याख्या:'}</strong> ${q.explanation}
+          <div class="mt-3 text-right">
+            <button onclick="nextQuestion()" class="touch-target px-4 py-2 rounded-full bg-ink text-parchment font-bold text-xs">
+              ${quizIndex === QUIZ_DATA.length - 1 ? 'परिणाम देखें' : 'अगला प्रश्न →'}
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function nextQuestion() {
+      quizIndex++;
+      quizAnswered = false;
+      renderQuiz();
+    }
+
+    function restartQuiz() {
+      quizIndex = 0;
+      quizScore = 0;
+      quizAnswered = false;
+      renderQuiz();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('thinker-search').addEventListener('input', () => {
+        expandedThinkerIdx = null;
+        renderThinkers();
+      });
+      renderSchools();
+      renderTimeline();
+      renderThinkers();
+      renderConcepts();
+      renderQuiz();
+      switchTab('map');
+    });
+  </script>
+  <script>
+    if (window.isSecureContext && 'serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(error => {
+          console.warn('Offline setup could not start.', error);
+        });
+      });
+    }
+  </script>
+</body>
+</html>
